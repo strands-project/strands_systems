@@ -4,7 +4,7 @@ strands_systems
 ## create a catkin workspace for different systems 
 
 1. install [wstool](http://ros.org/wiki/wstool): `sudo pip install wstool` (this is only to be done once)
-1. create your workspace: `mkdir catkin_ws`
+1. create your workspace, e.g `mkdir catkin_ws`, and then change into it, e.g. `cd catkin_ws`
 1. get all the repositories of a system using `wstool init src <add-your-system-url-here>`
   * currently we have the following wstool configs available
       1. desktop: run `wstool init src https://raw.github.com/strands-project/strands_systems/master/strands_rosinstall/strands-desktop.yaml`
