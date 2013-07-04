@@ -12,7 +12,8 @@ strands_systems
   * see [here](https://github.com/strands-project/strands_systems/tree/master/strands_rosinstall) for other system definitions understood by wstool
 1. initialse the catkin workspace: `catkin_init_workspace src`
 1. build the workspace: `catkin_make`
-1. to update all repositories from github (run `git pull` in all of them), 
+
+If in the future you need to update it simply do the following (it will run `git pull` in all of them), 
   1. `cd src`
   1. `wstool update`
   1. voila, you have an up-to-date system
