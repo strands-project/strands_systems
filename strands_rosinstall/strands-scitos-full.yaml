@@ -1,0 +1,33 @@
+- git:
+    local-name: scitos_common
+    uri: https://github.com/strands-project/scitos_common.git
+
+- git:
+    local-name: scitos_2d_navigation
+    uri: https://github.com/strands-project/scitos_2d_navigation.git
+
+- git:
+    local-name: scitos_mira
+    uri: https://github.com/strands-project/scitos_mira.git
+
+- git:
+    local-name: scitos_apps
+    uri: https://github.com/strands-project/scitos_apps.git
+
+- git:
+    local-name: strands_webtools
+    uri: https://github.com/strands-project/strands_webtools.git
+
+- git:
+    local-name: autonomous_patrolling
+    uri: https://github.com/strands-project/autonomous_patrolling.git
+
+- git:
+   local-name: catkinized_navigation
+   uri: https://github.com/ros-planning/navigation.git
+   version: groovy-devel-catkinized
+
+- git:
+   local-name: catkinized_smach
+   uri: https://github.com/ros/executive_smach.git
+   version: groovy-devel
