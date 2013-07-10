@@ -1,14 +1,14 @@
 - git:
+    local-name: scitos_mira
+    uri: https://github.com/strands-project/scitos_mira.git
+
+- git:
     local-name: scitos_common
     uri: https://github.com/strands-project/scitos_common.git
 
 - git:
     local-name: scitos_2d_navigation
     uri: https://github.com/strands-project/scitos_2d_navigation.git
-
-- git:
-    local-name: scitos_mira
-    uri: https://github.com/strands-project/scitos_mira.git
 
 - git:
     local-name: scitos_apps
@@ -22,6 +22,29 @@
     local-name: autonomous_patrolling
     uri: https://github.com/strands-project/autonomous_patrolling.git
 
+- git:
+    local-name: strands_utils
+    uri: https://github.com/strands-project/strands_utils.git
+
+- git:
+    local-name: strands_hri
+    uri: https://github.com/strands-project/strands_hri.git
+
+- git:
+    local-name: data_compression
+    uri: https://github.com/strands-project/data_compression.git
+
+- git:
+    local-name: vision
+    uri: https://github.com/strands-project/vision.git
+
+- git:
+    local-name: 3d_mapping
+    uri: https://github.com/strands-project/3d_mapping.git
+
+- git:
+    local-name: scitos_3d_mapping_and_navigation
+    uri: https://github.com/strands-project/scitos_3d_mapping_and_navigation.git
 - git:
    local-name: catkinized_navigation
    uri: https://github.com/strands-project/ros-navigation-fork.git
