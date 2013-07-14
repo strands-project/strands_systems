@@ -17,7 +17,7 @@ The following are instruction to set up a clean STRANDS system with all packages
       sudo apt-get install ros-groovy-rosbridge-suite ros-groovy-robot-pose-publisher ros-groovy-tf2-web-republisher ros-groovy-mjpeg-server
 
       ```
-1. create a user `strands`: `sudo adduser strands` (*justification:* Having a dedicated STRANDS user ensures that other people don't overwrite the stable system install or mess with it in an inappropriate way. Normal users shouldn't be allowed to write the system installation; e.g. on the robot).
+1. create a user `strands`: `sudo adduser strands` (*justification:*  Having a dedicated STRANDS user ensures that other people don't overwrite the stable system install or mess with it in an inappropriate way. Normal users shouldn't be allowed to write the system installation; e.g. on the robot).
 1. make new user admin: `sudo adduser strands sudo` (*justification:* This makes it possible to install packages during the installation, you *may* want to remove strands from the `sudo` group if you want that extra bit of security).
 1. create a directory to contain the strands stable installation: `sudo mkdir -p /opt/strands` (*justification:* we don't want to install it in the user's home, but system-wide)
 1. make strands the owner of that directory: `sudo chown -R strands:strands /opt/strands`
