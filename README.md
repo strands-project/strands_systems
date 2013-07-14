@@ -70,7 +70,7 @@ If you need to update it simply do the following (it will run `git pull` in all 
 This assumes you ahve a full current installation of the STRANDS system (e.g. in `/opt/strands` as described above). You checkout and create your own packages to work on in your local development workspace as described here. 
 
 1. create your workspace, e.g `mkdir catkin_ws`, and then change into it, e.g. `cd catkin_ws`
-1. initialse the catkin workspace: `catkin_init_workspace src`
+1. initialse the catkin workspace: `mkdir src; cd src; catkin_init_workspace; cd ..`
 1. get or create packages to work on, either do
     1. **initialise from a whole system using wstool:**  run `wstool init src <add-your-system-url-here>`, e.g. using
            ```
