@@ -26,7 +26,7 @@ The following are instruction to set up a clean STRANDS system with all packages
     1. install MORSE: `bash setup.sh`
 1. on the robot make sure that MIRA is installed
 1. install [wstool](http://ros.org/wiki/wstool): `sudo pip install wstool`
-1. create your workspace, e.g `mkdir strands_catkin_ws`, and then change into it, e.g. `cd strands_catkin_ws`
+1. create your workspace, e.g `mkdir /opt/strands/strands_catkin_ws`, and then change into it, e.g. `cd /opt/strands/strands_catkin_ws`
 1. get all the repositories for either the robot or the desktop version:
       1. desktop: run 
            ```
