@@ -92,6 +92,7 @@ A little [video](http://ascii.io/a/3882) illustrates the actual process nicely
 
 ### ROSBUILD workspace
 For some packages that are not catkinised yet you need to set up an extra ROSBUILD workspace. Read the details [here](http://ros.org/wiki/catkin/Tutorials/using_rosbuild_with_catkin). The following assumes you have created a catkin workspace as illustrated above.
+
 1. create your ROSBUILD workspace, e.g `mkdir ros_ws`, and then change into it, e.g. `cd ros_ws`
 1. initialse the ROSBUILD workspace from the catkin workspace, e.g. `rosws init . ~/catkin_ws/devel`
 1. configure your workspace to include other repositories, e.g. `wstool set gmapping --git https://github.com/ros-perception/slam_gmapping.git` or `wstool merge https://raw.github.com/LCAS/uol-openday-robot/master/uol_rosinstall/uol-cob.yaml`
@@ -99,4 +100,4 @@ For some packages that are not catkinised yet you need to set up an extra ROSBUI
 1. make source you configure your shell to use this workspace: `source setup.bash`
 1. run `rosmake` in any package you want to compile 
 
-Now your shell is configured to find all packages both in your catkin workspace and your ROSBUILD workspace
+Now your shell is configured to find all packages *both* in your catkin workspace and your ROSBUILD workspace
