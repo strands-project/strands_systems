@@ -1,7 +1,9 @@
 strands_systems
 ===============
 
-## Fresh install of STRANDS stable on your system
+## Maintaining a stable STRANDS installation
+
+### Fresh install of STRANDS stable on your system
 
 The following are instruction to set up a clean STRANDS system with all packages that are considered stable. This is not to setup your own development tree, but the base system on which you can overlay your own workspace with your own developments. In other words: Never edit anything directly unter `/opt/strands`.
 
@@ -52,7 +54,11 @@ If you need to update it simply do the following (it will run `git pull` in all 
   1. `wstool update` (gets everything from github)
   1. `cd ..` and build it: `catkin_make`
 
-
+### updating MORSE
+ 1. `cd /opt/strands/src/morse`
+ 1. `git pull`
+ 1. `cd build`
+ 1. `make install`
 
 
 ## Setup your local development workspace
