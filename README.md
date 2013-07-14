@@ -54,9 +54,10 @@ The following are instruction to set up a clean STRANDS system with all packages
     ```
     
 ### update the stable installation
-If you need to update it simply do the following (it will run `git pull` in all of them), 
+If you need to update it simply do the following as user `strands`: 
   1. `cd /opt/strands/strands_catkin_ws/src`
-  1. `wstool update` (gets everything from github)
+  1. `wstool merge https://raw.github.com/strands-project/strands_systems/master/strands_rosinstall/strands-desktop-full.yaml` (or whatever your system rosinstall configuration was that you chose earlier; this will make sure that you still have all the different repositories that belong to desktop-full installed, even if new ones are added. Usually you will see *Merge caused no change, no new elements found*, which is fine if the rosinstall config hasn't changed)
+  1. `wstool update` (gets everything from github, basically this runs `git pull` for you in all repositories)
   1. `cd ..` and build it: `catkin_make`
 
 ### updating MORSE
@@ -69,7 +70,7 @@ As user `strands` run:
 
 
 ## Setup your local development workspace
-This assumes you ahve a full current installation of the STRANDS system (e.g. in `/opt/strands` as described above). You checkout and create your own packages to work on in your local development workspace as described here. In ROS terms that is you *overlay* your own workspace
+This assumes you have a full current installation of the STRANDS system (e.g. in `/opt/strands` as described above). You checkout and create your own packages to work on in your local development workspace as described here. In ROS terms that is you *overlay* your own workspace. By overlaying, your packages hide the system one with the same name. E.g., if you are working on your own `strands_morse` than fork/branch `strands_morse` on github and clone it into your *own* workspace that you overlay over the system workspace. Everything you have in your own workspace will "overrule" the system stuff. But you will always have a clean system workspace (in `/opt/strands` if you followed the above).
 
 1. create your workspace, e.g `mkdir catkin_ws`, and then change into it, e.g. `cd catkin_ws`
 1. initialse the catkin workspace: `mkdir src; cd src; catkin_init_workspace; cd ..`
