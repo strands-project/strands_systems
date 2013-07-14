@@ -60,6 +60,8 @@ If you need to update it simply do the following (it will run `git pull` in all 
   1. `cd ..` and build it: `catkin_make`
 
 ### updating MORSE
+As user `strands` run:
+
  1. `cd /opt/strands/src/morse`
  1. `git pull`
  1. `cd build`
