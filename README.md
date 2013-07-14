@@ -96,3 +96,6 @@ For some packages that are not catkinised yet you need to set up an extra ROSBUI
 1. configure your workspace to include other repositories, e.g. `wstool set gmapping --git https://github.com/ros-perception/slam_gmapping.git` or `wstool merge https://raw.github.com/LCAS/uol-openday-robot/master/uol_rosinstall/uol-cob.yaml`
 1. get the latest from the repositories: `rosws update gmapping`
 1. make source you configure your shell to use this workspace: `source setup.bash`
+1. run `rosmake` in any package you want to compile 
+
+Now your shell is configured to find all packages both in your catkin workspace and your ROSBUILD workspace
