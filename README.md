@@ -6,7 +6,7 @@ strands_systems
 The following are instruction to set up a clean STRANDS system with all packages that are considered stable. This is not to setup your own development tree, but the base system on which you can overlay your own workspace with your own developments. In other words: Never edit anything directly unter `/opt/strands`.
 
 1. make sure you have all the ROS and other useful packages:
-  * basic build stuff: `sudo apt-get install cmake git  zlib1g-dev  git-cvs wget`
+  * basic build stuff: `sudo apt-get install cmake git  zlib1g-dev  git-cvs wget python-pip`
   * ROS basic installation: `sudo apt-get install ros-groovy-desktop-full python-rosinstall` 
   * addtional packages needed for [webtools](https://github.com/strands-project/strands_webtools): 
       ```
@@ -23,7 +23,7 @@ The following are instruction to set up a clean STRANDS system with all packages
     1. run `wget https://gist.github.com/cburbridge/5782900/raw/8a4c01f579b8e5ebe68205fc73274172a2a52534/setup.sh` to get the MORSE installer script
     1. install MORSE: `bash setup.sh`
 1. on the robot make sure that MIRA is installed
-1. install [wstool](http://ros.org/wiki/wstool): `sudo pip install wstool` (this is only to be done once)
+1. install [wstool](http://ros.org/wiki/wstool): `sudo pip install wstool`
 1. create your workspace, e.g `mkdir strands_catkin_ws`, and then change into it, e.g. `cd strands_catkin_ws`
 1. get all the repositories for either the robot or the desktop version:
       1. desktop: run 
