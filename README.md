@@ -46,33 +46,32 @@ The following are instruction to set up a clean STRANDS system with all packages
     [ -f /opt/strands/strands_catkin_ws/devel/setup.bash ] && source /opt/strands/strands_catkin_ws/devel/setup.bash
 
     ```
+### update the stable installation
+If you need to update it simply do the following (it will run `git pull` in all of them), 
+  1. `cd /opt/strands/strands_catkin_ws/src`
+  1. `wstool update` (gets everything from github)
+  1. `cd ..` and build it: `catkin_make`
 
 
 
 
-## create a catkin workspace for different systems 
+## Setup your local development workspace
+This assumes you ahve a full current installation of the STRANDS system (e.g. in `/opt/strands` as described above). You checkout and create your own packages to work on in your local development workspace as described here. 
 
 1. create your workspace, e.g `mkdir catkin_ws`, and then change into it, e.g. `cd catkin_ws`
-1. get all the repositories of a system using `wstool init src <add-your-system-url-here>`
-  * currently we have the following wstool configs available
-      1. desktop-full: run 
+1. initialse the catkin workspace: `catkin_init_workspace src`
+1. get or create packages to work on, either do
+    1. **initialise from a whole system using wstool:**  run `wstool init src <add-your-system-url-here>`, e.g. using
            ```
            wstool init src https://raw.github.com/strands-project/strands_systems/master/strands_rosinstall/strands-desktop-full.yaml
            
            ```
-      1. scitos (for the actual robot): 
-           ```
-           wstool init src https://raw.github.com/strands-project/strands_systems/master/strands_rosinstall/strands-scitos.yaml
-
-           ```
-  * see [here](https://github.com/strands-project/strands_systems/tree/master/strands_rosinstall) for other system definitions understood by wstool
-1. initialse the catkin workspace: `catkin_init_workspace src`
-1. build the workspace: `catkin_make`
-
-If in the future you need to update it simply do the following (it will run `git pull` in all of them), 
-  1. `cd src`
-  1. `wstool update`
-  1. voila, you have an up-to-date system
+        * see [here](https://github.com/strands-project/strands_systems/tree/master/strands_rosinstall) for other system definitions understood by wstool
+    1. **create your own catkin package to start working in:** `cd src`, followed by `catkin_create_pkg <your package> <your deps>`
+    1. **clone a specific repository into src:** `cd src`, followed by e.g. `git clone https://github.com/strands-project/scitos_apps.git`
+1. in `catkin_ws` run `catkin_make`
+1. make sure you source the config of your own workspace: `source devel/setup.bash`
 
 
 A little [video](http://ascii.io/a/3882) illustrates the actual process nicely
+
