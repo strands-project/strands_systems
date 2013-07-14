@@ -69,7 +69,7 @@ As user `strands` run:
 
 
 ## Setup your local development workspace
-This assumes you ahve a full current installation of the STRANDS system (e.g. in `/opt/strands` as described above). You checkout and create your own packages to work on in your local development workspace as described here. 
+This assumes you ahve a full current installation of the STRANDS system (e.g. in `/opt/strands` as described above). You checkout and create your own packages to work on in your local development workspace as described here. In ROS terms that is you *overlay* your own workspace
 
 1. create your workspace, e.g `mkdir catkin_ws`, and then change into it, e.g. `cd catkin_ws`
 1. initialse the catkin workspace: `mkdir src; cd src; catkin_init_workspace; cd ..`
@@ -82,9 +82,17 @@ This assumes you ahve a full current installation of the STRANDS system (e.g. in
         * see [here](https://github.com/strands-project/strands_systems/tree/master/strands_rosinstall) for other system definitions understood by wstool
     1. **create your own catkin package to start working in:** `cd src`, followed by `catkin_create_pkg <your package> <your deps>`
     1. **clone a specific repository into src:** `cd src`, followed by e.g. `git clone https://github.com/strands-project/scitos_apps.git`
+1. make sure you have configured the shell for the "underlay" workspace (i.e. `/opt/strands/devel/setup.bash`), read http://ros.org/wiki/catkin/Tutorials/workspace_overlaying to learn more about overlaying
 1. in `catkin_ws` run `catkin_make`
 1. make sure you source the config of your own workspace: `source devel/setup.bash`
 
 
 A little [video](http://ascii.io/a/3882) illustrates the actual process nicely
 
+### ROSBUILD workspace
+For some packages that are not catkinised yet you need to set up an extra ROSBUILD workspace. Read the details [here](http://ros.org/wiki/catkin/Tutorials/using_rosbuild_with_catkin). The following assumes you have created a catkin workspace as illustrated above.
+1. create your ROSBUILD workspace, e.g `mkdir ros_ws`, and then change into it, e.g. `cd ros_ws`
+1. initialse the ROSBUILD workspace from the catkin workspace, e.g. `rosws init . ~/catkin_ws/devel`
+1. configure your workspace to include other repositories, e.g. `wstool set gmapping --git https://github.com/ros-perception/slam_gmapping.git` or `wstool merge https://raw.github.com/LCAS/uol-openday-robot/master/uol_rosinstall/uol-cob.yaml`
+1. get the latest from the repositories: `rosws update gmapping`
+1. make source you configure your shell to use this workspace: `source setup.bash`
