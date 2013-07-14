@@ -48,6 +48,7 @@ The following are instruction to set up a clean STRANDS system with all packages
     [ -f /opt/strands/strands_catkin_ws/devel/setup.bash ] && source /opt/strands/strands_catkin_ws/devel/setup.bash
 
     ```
+    
 ### update the stable installation
 If you need to update it simply do the following (it will run `git pull` in all of them), 
   1. `cd /opt/strands/strands_catkin_ws/src`
