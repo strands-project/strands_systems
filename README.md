@@ -23,9 +23,9 @@ Make sure you have all the required software installed:
 1. create your workspace, e.g `mkdir catkin_ws`, and then change into it, e.g. `cd catkin_ws`
 1. get all the repositories of a system using `wstool init src <add-your-system-url-here>`
   * currently we have the following wstool configs available
-      1. desktop: run 
+      1. desktop-full: run 
            ```
-           wstool init src https://raw.github.com/strands-project/strands_systems/master/strands_rosinstall/strands-desktop.yaml
+           wstool init src https://raw.github.com/strands-project/strands_systems/master/strands_rosinstall/strands-desktop-full.yaml
            
            ```
       1. scitos (for the actual robot): 
