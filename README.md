@@ -87,7 +87,7 @@ This assumes you have a full current installation of the STRANDS system (e.g. in
            ```
         * see [here](https://github.com/strands-project/strands_systems/tree/master/strands_rosinstall) for other system definitions understood by wstool
     1. **create your own catkin package to start working in:** `cd src`, followed by `catkin_create_pkg <your package> <your deps>`
-    1. **clone a specific repository into src:** `cd src`, followed by e.g. `git clone https://github.com/strands-project/scitos_apps.git`
+    1. **clone a specific repository:** `cd src`, followed by e.g. `wstool set scitos_apps --git https://github.com/strands-project/scitos_apps.git`, then run `wstool update` to clone the repository just set up
 1. make sure you have configured the shell for the "underlay" workspace (i.e. `/opt/strands/devel/setup.bash`), read http://ros.org/wiki/catkin/Tutorials/workspace_overlaying to learn more about overlaying
 1. in `catkin_ws` run `catkin_make`
 1. make sure you source the config of your own workspace: `source devel/setup.bash`
