@@ -3,6 +3,8 @@ strands_systems
 
 ## Maintaining a stable STRANDS installation
 
+The following instructions are thought as a kind of "best practice" when installing a strands system (from scratch). You might want to deviate from this recipe, but then don't blame it on me (Marc) if it doesn't work as expected ;-)
+
 ### Fresh install of STRANDS stable on your system
 
 The following are instruction to set up a clean STRANDS system with all packages that are considered stable. This is not to setup your own development tree, but the base system on which you can overlay your own workspace with your own developments. In other words: Never edit anything directly unter `/opt/strands`.
