@@ -20,6 +20,10 @@ The following are instruction to set up a clean STRANDS system with all packages
 1. create a directory to contain the strands stable installation: `sudo mkdir -p /opt/strands`
 1. make strands the owner of that directory: `sudo chown -R strands:strands /opt/strands`
 1. login as user `strands`: `su -l strands`
+1. configure the `strands` user for ROS by putting the following at the end of the `.bashrc` file:
+    ```
+    [ -f /opt/ros/groovy/setup.bash ] && source /opt/ros/groovy/setup.bash    
+    ```
 1. change into the new directory: `cd /opt/strands`
 1. on the desktop installation install MORSE
     1. run `wget https://gist.github.com/cburbridge/5782900/raw/8a4c01f579b8e5ebe68205fc73274172a2a52534/setup.sh` to get the MORSE installer script
