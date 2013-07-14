@@ -3,7 +3,7 @@ strands_systems
 
 ## Fresh install of STRANDS stable on your system
 
-Make sure you have all the required software installed:
+The following are instruction to set up a clean STRANDS system with all packages that are considered stable. This is not to setup your own development tree, but the base system on which you can overlay your own workspace with your own developments. In other words: Never edit anything directly unter `/opt/strands`.
 
 1. make sure you have all the ROS and other useful packages:
   * basic build stuff: `sudo apt-get install cmake git  zlib1g-dev  git-cvs wget`
