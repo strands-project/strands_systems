@@ -103,6 +103,7 @@ A little [video](http://ascii.io/a/3882) illustrates a similar process
 #### Eclipse
 
 If you want to use eclipse, you can have catkin create eclipse config files for you running
+
     ```
     cd ~/catkin_ws
     catkin_make --force-cmake -G"Eclipse CDT4 - Unix Makefiles"
