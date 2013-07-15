@@ -42,7 +42,7 @@ The following are instruction to set up a clean STRANDS system with all packages
            ```
       1. scitos (for the actual robot): 
            ```
-           wstool init src https://raw.github.com/strands-project/strands_systems/master/strands_rosinstall/strands-scitos.yaml
+           wstool init src https://raw.github.com/strands-project/strands_systems/master/strands_rosinstall/strands-scitos-full.yaml
 
            ```
 1. initialse the catkin workspace: `cd src; catkin_init_workspace; cd ..` 
