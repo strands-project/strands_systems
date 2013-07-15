@@ -47,15 +47,10 @@ The following are instruction to set up a clean STRANDS system with all packages
            ```
 1. initialse the catkin workspace: `cd src; catkin_init_workspace; cd ..` 
 1. build the workspace: `catkin_make`
-1. in your own `~/.bashrc` configure your shell to use the stuff in `/opt/strands` by adding the following at the end:
-    ```
-    # configure MORSE
-    [ -f /opt/strands/.bashrc ] && source /opt/strands/.bashrc
-    # configure the STRANDS catkin workspace
-    [ -f /opt/strands/strands_catkin_ws/devel/setup.bash ] && source /opt/strands/strands_catkin_ws/devel/setup.bash
+1. now your systemn is ready to go. Test e.g. with `rosls scitos_2d_navigation`
 
-    ```
-    
+To develop software in your own development workspace jump to "Using an existing STRANDS installation and developing in it"
+
 ### update the stable installation
 If you need to update it simply do the following as user `strands`: 
   1. `cd /opt/strands/strands_catkin_ws/src`
@@ -74,7 +69,18 @@ As user `strands` run:
  1. `make install`
 
 
-## Setup your local development workspace
+## Using an existing STRANDS installation and developing in it
+* in your own `~/.bashrc` configure your shell to use the stuff in `/opt/strands` by adding the following at the end:
+    ```
+    # configure MORSE
+    [ -f /opt/strands/.bashrc ] && source /opt/strands/.bashrc
+    # configure the STRANDS catkin workspace
+    [ -f /opt/strands/strands_catkin_ws/devel/setup.bash ] && source /opt/strands/strands_catkin_ws/devel/setup.bash
+
+    ```
+* run `source ~/.basrc` or start a new terminal to make sure your evironment is set up properly
+
+### Setup your local CATKIN development workspace
 This assumes you have a full current installation of the STRANDS system (e.g. in `/opt/strands` as described above). You checkout and create your own packages to work on in your local development workspace as described here. In ROS terms that is you *overlay* your own workspace. By overlaying, your packages hide the system one with the same name. E.g., if you are working on your own `strands_morse` than fork/branch `strands_morse` on github and clone it into your *own* workspace that you overlay over the system workspace. Everything you have in your own workspace will "overrule" the system stuff. But you will always have a clean system workspace (in `/opt/strands` if you followed the above).
 
 1. create your workspace, e.g `mkdir catkin_ws`, and then change into it, e.g. `cd catkin_ws`
@@ -92,11 +98,23 @@ This assumes you have a full current installation of the STRANDS system (e.g. in
 1. in `catkin_ws` run `catkin_make`
 1. make sure you source the config of your own workspace: `source devel/setup.bash`
 
+A little [video](http://ascii.io/a/3882) illustrates a similar process 
 
-A little [video](http://ascii.io/a/3882) illustrates the actual process nicely
+#### Eclipse
+
+If you want to use eclipse, you can have catkin create eclipse config files for you running
+    ```
+    cd ~/catkin_ws
+    catkin_make --force-cmake -G"Eclipse CDT4 - Unix Makefiles"
+    source ~/catkin_ws/devel/setup.bash
+    eclipse
+    ```
+
+Then you import the project into eclipse from `catkin_ws/build` using the import tool in eclipse (choose "existing project")
+
 
 ### ROSBUILD workspace
-For some packages that are not catkinised yet you need to set up an extra ROSBUILD workspace. Read the details [here](http://ros.org/wiki/catkin/Tutorials/using_rosbuild_with_catkin). The following assumes you have created a catkin workspace as illustrated above.
+For some packages that are not catkinised yet you need to set up a separate ROSBUILD workspace. Read the details [here](http://ros.org/wiki/catkin/Tutorials/using_rosbuild_with_catkin). The following assumes you have created a catkin workspace as illustrated above.
 
 1. create your ROSBUILD workspace, e.g `mkdir ros_ws`, and then change into it, e.g. `cd ros_ws`
 1. initialse the ROSBUILD workspace from the catkin workspace, e.g. `rosws init . ~/catkin_ws/devel`
