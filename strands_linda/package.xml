@@ -41,11 +41,9 @@
   <!--   <test_depend>gtest</test_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>ros_mary_tts</build_depend>
-  <build_depend>scitos_launch</build_depend>
   <build_depend>scitos_teleop</build_depend>
   <build_depend>strands_webtools</build_depend>
   <run_depend>ros_mary_tts</run_depend>
-  <run_depend>scitos_launch</run_depend>
   <run_depend>scitos_teleop</run_depend>
   <run_depend>strands_webtools</run_depend>
 
