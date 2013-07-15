@@ -54,3 +54,14 @@
    local-name: catkinized_smach
    uri: https://github.com/ros/executive_smach.git
    version: groovy-devel
+
+
+- git: 
+   local-name: strands_systems_linda
+   uri: 'https://github.com/strands-project/strands_systems.git'
+   version: linda-stable
+
+- git: 
+   local-name: uol-open-day
+   uri: 'https://github.com/LCAS/uol-openday-robot.git'
+
