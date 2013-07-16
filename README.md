@@ -17,45 +17,42 @@ The following are instruction to set up a clean STRANDS system with all packages
       sudo apt-get install ros-groovy-rosbridge-suite ros-groovy-robot-pose-publisher ros-groovy-tf2-web-republisher ros-groovy-mjpeg-server
 
       ```
-1. create a user `strands`: `sudo adduser strands` (*justification:*  Having a dedicated STRANDS user ensures that other people don't overwrite the stable system install or mess with it in an inappropriate way. Normal users shouldn't be allowed to write the system installation; e.g. on the robot).
-1. make new user admin: `sudo adduser strands sudo` (*justification:* This makes it possible to install packages during the installation, you *may* want to remove strands from the `sudo` group if you want that extra bit of security).
-1. create a directory to contain the strands stable installation: `sudo mkdir -p /opt/strands` (*justification:* we don't want to install it in the user's home, but system-wide)
-1. make strands the owner of that directory: `sudo chown -R strands:strands /opt/strands`
-1. login as user `strands`: `su -l strands` 
-1. configure the `strands` user for ROS by putting the following at the end of the `~/.bashrc` file:
-    ```
-    [ -f /opt/ros/groovy/setup.bash ] && source /opt/ros/groovy/setup.bash    
-    ```
-   and then `source ~/.bashrc` to make it active immediately.
-1. change into the new directory: `cd /opt/strands`
-1. on the desktop installation install MORSE
-    1. run `wget https://gist.github.com/cburbridge/5782900/raw/8a4c01f579b8e5ebe68205fc73274172a2a52534/setup.sh` to get the MORSE installer script
-    1. install MORSE: `bash setup.sh` (this will install MORSE directly from github in the latest master version and also make sure all other required packages are installed)
-1. on the robot make sure that MIRA is installed
+1. SUGGESTED: use a dedicated user and directory to install the stable system (*justification:*  Having a dedicated STRANDS user ensures that other people don't overwrite the stable system install or mess with it in an inappropriate way. Normal users shouldn't be allowed to write the system installation; e.g. on the robot). The suggested directory is `/opt/strands` and the user is `strands`. You may also choose to install the system in your own user space, e.g. `~/strands_stable`, then you have to substitute `/opt/strands` for your own path in the following.
+  1. create a user `strands`: `sudo adduser strands` 
+  1. make new user admin: `sudo adduser strands sudo` (*justification:* This makes it possible to install packages during the installation, you *may* want to remove strands from the `sudo` group if you want that extra bit of security).
+  1. login as user `strands`: `su -l strands` 
+  1. configure the `strands` user for ROS by putting the following at the end of the `~/.bashrc` file:
+      ```
+      [ -f /opt/ros/groovy/setup.bash ] && source /opt/ros/groovy/setup.bash    
+      ```
+     and then `source ~/.bashrc` to make it active immediately.
+  1. create a directory to contain the strands stable installation: `sudo mkdir -p /opt/strands` (*justification:* we don't want to install it in the user's home, but system-wide)
+  1. make strands the owner of that directory: `sudo chown -R strands:strands /opt/strands`
+  1. change into the new directory: `cd /opt/strands`
+1. install hardware specific dependencies or make sure the are installed (MIRA or MORSE)
+  * MORSE: in your installation directory (here: `/opt/strands`) on the desktop:
+      1. run `wget https://gist.github.com/cburbridge/5782900/raw/8a4c01f579b8e5ebe68205fc73274172a2a52534/setup.sh` to get the MORSE installer script
+      1. install MORSE: `bash setup.sh` (this will install MORSE directly from github in the latest master version and also make sure all other required packages are installed)
+  * MIRA: on the robot make sure that MIRA is installed
 1. install [wstool](http://ros.org/wiki/wstool): `sudo pip install wstool` (*justification:* this is needed to manage the repositories)
 1. create your workspace, e.g. `mkdir /opt/strands/strands_catkin_ws`, and then change into it, e.g. `cd /opt/strands/strands_catkin_ws`
 1. get all the repositories for either the robot or the desktop version:
-      1. desktop: run 
+      * desktop: run 
            ```
            wstool init src https://raw.github.com/strands-project/strands_systems/master/strands_rosinstall/strands-desktop-full.yaml
            
            ```
-      1. scitos (for the actual robot): 
+      * scitos (for the actual robot): 
            ```
            wstool init src https://raw.github.com/strands-project/strands_systems/master/strands_rosinstall/strands-scitos-full.yaml
 
            ```
-1. initialse the catkin workspace: `cd src; catkin_init_workspace; cd ..` 
+1. initialise the catkin workspace: `cd src; catkin_init_workspace; cd ..` 
 1. build the workspace: `catkin_make`
-1. in your own `~/.bashrc` configure your shell to use the stuff in `/opt/strands` by adding the following at the end:
-    ```
-    # configure MORSE
-    [ -f /opt/strands/.bashrc ] && source /opt/strands/.bashrc
-    # configure the STRANDS catkin workspace
-    [ -f /opt/strands/strands_catkin_ws/devel/setup.bash ] && source /opt/strands/strands_catkin_ws/devel/setup.bash
+1. now your systemn is ready to go. Test e.g. with `rosls scitos_2d_navigation`
 
-    ```
-    
+To develop software in your own development workspace jump to "Using an existing STRANDS installation and developing in it"
+
 ### update the stable installation
 If you need to update it simply do the following as user `strands`: 
   1. `cd /opt/strands/strands_catkin_ws/src`
@@ -74,7 +71,18 @@ As user `strands` run:
  1. `make install`
 
 
-## Setup your local development workspace
+## Using an existing STRANDS installation and developing in it
+* in your own `~/.bashrc` configure your shell to use the stuff in `/opt/strands` by adding the following at the end:
+    ```
+    # configure MORSE
+    [ -f /opt/strands/.bashrc ] && source /opt/strands/.bashrc
+    # configure the STRANDS catkin workspace
+    [ -f /opt/strands/strands_catkin_ws/devel/setup.bash ] && source /opt/strands/strands_catkin_ws/devel/setup.bash
+
+    ```
+* run `source ~/.basrc` or start a new terminal to make sure your evironment is set up properly
+
+### Setup your local CATKIN development workspace
 This assumes you have a full current installation of the STRANDS system (e.g. in `/opt/strands` as described above). You checkout and create your own packages to work on in your local development workspace as described here. In ROS terms that is you *overlay* your own workspace. By overlaying, your packages hide the system one with the same name. E.g., if you are working on your own `strands_morse` than fork/branch `strands_morse` on github and clone it into your *own* workspace that you overlay over the system workspace. Everything you have in your own workspace will "overrule" the system stuff. But you will always have a clean system workspace (in `/opt/strands` if you followed the above).
 
 1. create your workspace, e.g `mkdir catkin_ws`, and then change into it, e.g. `cd catkin_ws`
@@ -92,11 +100,24 @@ This assumes you have a full current installation of the STRANDS system (e.g. in
 1. in `catkin_ws` run `catkin_make`
 1. make sure you source the config of your own workspace: `source devel/setup.bash`
 
+A little [video](http://ascii.io/a/3882) illustrates a similar process 
 
-A little [video](http://ascii.io/a/3882) illustrates the actual process nicely
+#### Eclipse
+
+If you want to use eclipse, you can have catkin create eclipse config files for you running
+
+    ```
+    cd ~/catkin_ws
+    catkin_make --force-cmake -G"Eclipse CDT4 - Unix Makefiles"
+    source ~/catkin_ws/devel/setup.bash
+    eclipse
+    ```
+
+Then you import the project into eclipse from `catkin_ws/build` using the import tool in eclipse (choose "existing project")
+
 
 ### ROSBUILD workspace
-For some packages that are not catkinised yet you need to set up an extra ROSBUILD workspace. Read the details [here](http://ros.org/wiki/catkin/Tutorials/using_rosbuild_with_catkin). The following assumes you have created a catkin workspace as illustrated above.
+For some packages that are not catkinised yet you need to set up a separate ROSBUILD workspace. Read the details [here](http://ros.org/wiki/catkin/Tutorials/using_rosbuild_with_catkin). The following assumes you have created a catkin workspace as illustrated above.
 
 1. create your ROSBUILD workspace, e.g `mkdir ros_ws`, and then change into it, e.g. `cd ros_ws`
 1. initialse the ROSBUILD workspace from the catkin workspace, e.g. `rosws init . ~/catkin_ws/devel`

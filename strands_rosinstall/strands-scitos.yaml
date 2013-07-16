@@ -7,12 +7,16 @@
     uri: https://github.com/strands-project/scitos_2d_navigation.git
 
 - git:
-    local-name: scitos_mira
-    uri: https://github.com/strands-project/scitos_mira.git
+    local-name: scitos_drivers
+    uri: https://github.com/strands-project/scitos_drivers.git
 
 - git:
     local-name: scitos_apps
     uri: https://github.com/strands-project/scitos_apps.git
+
+- git:
+    local-name: scitos_robot
+    uri: https://github.com/strands-project/scitos_robot.git
 
 - git:
     local-name: strands_webtools
