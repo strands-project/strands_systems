@@ -49,14 +49,17 @@ The following are instruction to set up a clean STRANDS system with all packages
            ```
 1. initialise the catkin workspace: `cd src; catkin_init_workspace; cd ..` 
 1. build the workspace: `catkin_make`
-1. now your systemn is ready to go. Test e.g. with `rosls scitos_2d_navigation`
+1. now your system is ready to go. Please follow the instructions below to get started: "Using an existing STRANDS installation and developing in it"    
 
-To develop software in your own development workspace jump to "Using an existing STRANDS installation and developing in it"
+
 
 ### update the stable installation
 If you need to update it simply do the following as user `strands`: 
   1. `cd /opt/strands/strands_catkin_ws/src`
-  1. `wstool merge https://raw.github.com/strands-project/strands_systems/master/strands_rosinstall/strands-desktop-full.yaml` (or whatever your system rosinstall configuration was that you chose earlier; this will make sure that you still have all the different repositories that belong to desktop-full installed, even if new ones are added. Usually you will see *Merge caused no change, no new elements found*, which is fine if the rosinstall config hasn't changed)
+  1. `wstool merge URL` (where <strong>URL</strong> is whatever your system rosinstall configuration was that you chose earlier; this will make sure that you still have all the different repositories that belong to desktop-full installed, even if new ones are added. Usually you will see *Merge caused no change, no new elements found*, which is fine if the rosinstall config hasn't changed). For example:
+           
+           wstool merge https://raw.github.com/strands-project/strands_systems/master/strands_rosinstall/strands-desktop-full.yaml
+           
   1. `wstool update` (gets everything from github, basically this runs `git pull` for you in all the repositories)
   1. `cd ..` and build it: `catkin_make`
  
