@@ -12,11 +12,10 @@ The following are instruction to set up a clean STRANDS system with all packages
 1. make sure you have all the ROS and other useful packages:
   * basic build stuff: `sudo apt-get install cmake git  zlib1g-dev  git-cvs wget python-pip`
   * ROS basic installation: `sudo apt-get install ros-groovy-desktop-full python-rosinstall` 
-  * addtional packages needed for [webtools](https://github.com/strands-project/strands_webtools): 
-      ```
-      sudo apt-get install ros-groovy-rosbridge-suite ros-groovy-robot-pose-publisher ros-groovy-tf2-web-republisher ros-groovy-mjpeg-server
+  * UPDATE: ~~additional packages needed for [webtools](https://github.com/strands-project/strands_webtools)~~ is no longer needed. The `rosdep` calls takes care of this.
+  * Initialise rosdep if not done before: `sudo rosdep init`
+  * update rosdep: `rosdep update`
 
-      ```
 1. SUGGESTED: use a dedicated user and directory to install the stable system (*justification:*  Having a dedicated STRANDS user ensures that other people don't overwrite the stable system install or mess with it in an inappropriate way. Normal users shouldn't be allowed to write the system installation; e.g. on the robot). The suggested directory is `/opt/strands` and the user is `strands`. You may also choose to install the system in your own user space, e.g. `~/strands_stable`, then you have to substitute `/opt/strands` for your own path in the following.
   1. create a user `strands`: `sudo adduser strands` 
   1. make new user admin: `sudo adduser strands sudo` (*justification:* This makes it possible to install packages during the installation, you *may* want to remove strands from the `sudo` group if you want that extra bit of security).
@@ -48,6 +47,7 @@ The following are instruction to set up a clean STRANDS system with all packages
 
            ```
 1. initialise the catkin workspace: `cd src; catkin_init_workspace; cd ..` 
+1. install all dependencies automatically: `rosdep install --from-paths src --ignore-src --rosdistro groovy -y -r`
 1. build the workspace: `catkin_make`
 1. now your system is ready to go. Please follow the instructions below to get started: "Using an existing STRANDS installation and developing in it"    
 
