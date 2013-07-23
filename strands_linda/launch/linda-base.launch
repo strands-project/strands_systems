@@ -1,6 +1,7 @@
 <launch>
 	<include file="$(find scitos_bringup)/launch/scitos.launch" />
 	<include file="$(find strands_webtools)/webtools.launch" />
-	<include file="$(find scitos_teleop)/launch/teleop_joystick.launch" />
+	<include file="$(find scitos_cmd_vel_mux)/launch/mux.launch" />
+	<include file="$(find scitos_teleop)/launch/teleop_joystick_mux.launch" />
 	<include file="$(find ros_mary_tts)/launch/ros_mary.launch" />    
 </launch>
