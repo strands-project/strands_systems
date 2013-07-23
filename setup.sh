@@ -104,7 +104,7 @@ cd catkin && git checkout 0.5.65
 ${workspace}/bin/python3.3 setup.py install
 
 echo "Install MORSE (latest from git master branch)"
-(cd ${workspace}/src && git clone https://github.com/laas/morse.git && \
+(cd ${workspace}/src && git clone https://github.com/strands-project/morse.git && \
 wait $pypid && cd ${workspace}/src/morse && mkdir -p build && cd build && \
 cmake -DCMAKE_INSTALL_PREFIX=${workspace} -DPYMORSE_SUPPORT=ON \
 -DPYTHON_EXECUTABLE=${workspace}/bin/python3.3 -DBUILD_ROS_SUPPORT=ON .. && \
