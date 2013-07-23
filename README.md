@@ -73,6 +73,14 @@ As user `strands` run:
  1. `cd build`
  1. `make install`
 
+### migrating your MORSE installation from morse-simulator/morse to strands-project/morse
+As user `strands` run:
+
+ 1. `cd /opt/strands/src/morse`
+ 1. `git remote add strands-morse https://github.com/strands-project/morse.git`
+ 1. `git pull strands-morse master`
+ 1. `cd build`
+ 1. `make install`
 
 ## Using an existing STRANDS installation and developing in it
 * in your own `~/.bashrc` configure your shell to use the stuff in `/opt/strands` by adding the following at the end:
