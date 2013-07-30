@@ -11,6 +11,7 @@ The following are instruction to set up a clean STRANDS system with all packages
 
 1. make sure you have all the ROS and other useful packages:
   * basic build stuff: `sudo apt-get install cmake git  zlib1g-dev  git-cvs wget python-pip`
+  * Adding the ROS repository: `sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros-latest.list'`
   * ROS basic installation: `sudo apt-get install ros-groovy-desktop-full python-rosinstall` 
   * UPDATE: ~~additional packages needed for [webtools](https://github.com/strands-project/strands_webtools)~~ is no longer needed. The `rosdep` calls takes care of this.
   * Initialise rosdep if not done before: `sudo rosdep init`
