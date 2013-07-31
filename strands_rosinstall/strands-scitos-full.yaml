@@ -56,5 +56,5 @@
 
 - git:
    local-name: catkinized_smach
-   uri: https://github.com/ros/executive_smach.git
+   uri: https://github.com/strands-project/executive_smach.git
    version: groovy-devel
