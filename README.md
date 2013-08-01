@@ -33,7 +33,7 @@ The following are instruction to set up a clean STRANDS system with all packages
   1. change into the new directory: `cd /opt/strands`
 1. install hardware specific dependencies or make sure the are installed (MIRA or MORSE)
   * MORSE: in your installation directory (here: `/opt/strands`) on the desktop:
-      1. run `wget https://gist.github.com/cburbridge/5782900/raw/8a4c01f579b8e5ebe68205fc73274172a2a52534/setup.sh` to get the MORSE installer script
+      1. run `wget https://raw.github.com/strands-project/strands_systems/master/setup.sh` to get the MORSE installer script
       1. install MORSE: `bash setup.sh` (this will install MORSE directly from github in the latest master version and also make sure all other required packages are installed)
   * MIRA: on the robot make sure that MIRA is installed
 1. install [wstool](http://ros.org/wiki/wstool): `sudo pip install wstool` (*justification:* this is needed to manage the repositories)
@@ -76,6 +76,14 @@ As user `strands` run:
  1. `cd build`
  1. `make install`
 
+### migrating your MORSE installation from morse-simulator/morse to strands-project/morse
+As user `strands` run:
+
+ 1. `cd /opt/strands/src/morse`
+ 1. `git remote add strands-morse https://github.com/strands-project/morse.git`
+ 1. `git pull strands-morse master`
+ 1. `cd build`
+ 1. `make install`
 
 ## Using an existing STRANDS installation and developing in it
 * in your own `~/.bashrc` configure your shell to use the stuff in `/opt/strands` by adding the following at the end:
