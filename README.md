@@ -78,6 +78,7 @@ As user `strands` run:
  1. `make install`
 
 ### migrating your MORSE installation from morse-simulator/morse to strands-project/morse
+*This is only necessary if you have previously used the official MORSE repository*
 As user `strands` run:
 
  1. `cd /opt/strands/src/morse`
@@ -86,6 +87,11 @@ As user `strands` run:
  1. `cd build`
  1. `cmake -DCMAKE_INSTALL_PREFIX=${workspace} -DPYMORSE_SUPPORT=ON -DPYTHON_EXECUTABLE=${workspace}/bin/python3.3 -DBUILD_ROS_SUPPORT=ON ..` where `${workspace}` should be set to your installation location (e.g. `/opt/strands`) 
  1. `make install`
+
+
+### Automate update procedures
+
+[here](https://gist.github.com/marc-hanheide/e392482740a865e15ed9) is a tiny script that I (Marc) run every day on my machine to make sure I have the latest version.
 
 ## Using an existing STRANDS installation and developing in it
 * in your own `~/.bashrc` configure your shell to use the stuff in `/opt/strands` by adding the following at the end:
