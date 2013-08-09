@@ -36,7 +36,7 @@ The following are instruction to set up a clean STRANDS system with all packages
       1. run `wget https://raw.github.com/strands-project/strands_systems/master/setup.sh` to get the MORSE installer script
       1. install MORSE: `bash setup.sh` (this will install MORSE directly from github in the latest master version and also make sure all other required packages are installed)
   * MIRA: on the robot make sure that MIRA is installed
-1. install [wstool](http://ros.org/wiki/wstool): `sudo pip install wstool` (*justification:* this is needed to manage the repositories)
+1. install [wstool](http://ros.org/wiki/wstool): `sudo apt-get install python-wstool`  (*justification:* this is needed to manage the repositories)
 1. create your workspace, e.g. `mkdir /opt/strands/strands_catkin_ws`, and then change into it, e.g. `cd /opt/strands/strands_catkin_ws`
 1. get all the repositories for either the robot or the desktop version:
       * desktop: run 
@@ -74,16 +74,24 @@ As user `strands` run:
  1. `cd /opt/strands/src/morse`
  1. `git pull`
  1. `cd build`
+ 1. `cmake -DCMAKE_INSTALL_PREFIX=${workspace} -DPYMORSE_SUPPORT=ON -DPYTHON_EXECUTABLE=${workspace}/bin/python3.3 -DBUILD_ROS_SUPPORT=ON ..` where `${workspace}` should be set to your installation location (e.g. `/opt/strands`)
  1. `make install`
 
 ### migrating your MORSE installation from morse-simulator/morse to strands-project/morse
+*This is only necessary if you have previously used the official MORSE repository*
 As user `strands` run:
 
  1. `cd /opt/strands/src/morse`
  1. `git remote add strands-morse https://github.com/strands-project/morse.git`
  1. `git pull strands-morse master`
  1. `cd build`
+ 1. `cmake -DCMAKE_INSTALL_PREFIX=${workspace} -DPYMORSE_SUPPORT=ON -DPYTHON_EXECUTABLE=${workspace}/bin/python3.3 -DBUILD_ROS_SUPPORT=ON ..` where `${workspace}` should be set to your installation location (e.g. `/opt/strands`) 
  1. `make install`
+
+
+### Automate update procedures
+
+[here](https://gist.github.com/marc-hanheide/e392482740a865e15ed9) is a tiny script that I (Marc) run every day on my machine to make sure I have the latest version.
 
 ## Using an existing STRANDS installation and developing in it
 * in your own `~/.bashrc` configure your shell to use the stuff in `/opt/strands` by adding the following at the end:
