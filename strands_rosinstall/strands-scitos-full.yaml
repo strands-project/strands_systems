@@ -49,6 +49,11 @@
 - git:
     local-name: scitos_3d_mapping_and_navigation
     uri: https://github.com/strands-project/scitos_3d_mapping_and_navigation.git
+
+- git:
+    local-name: strands_perception_people
+    uri: https://github.com/strands-project/strands_perception_people.git
+
 - git:
    local-name: catkinized_navigation
    uri: https://github.com/strands-project/ros-navigation-fork.git
