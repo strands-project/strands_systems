@@ -51,7 +51,7 @@ The following are instruction to set up a clean STRANDS system with all packages
            ```
 1. initialise the catkin workspace: `cd src; catkin_init_workspace; cd ..` 
 1. install all dependencies automatically: `rosdep install --from-paths src --ignore-src --rosdistro groovy -y -r`
-1. build the workspace: `catkin_make`
+1. UPDATE: build the workspace: ~~catkin_make~~ `catkin_make -DCMAKE_BUILD_TYPE=Release` _The build type argument prevents the generation of debug symbols and uses -O3 optimization._
 1. now your system is ready to go. Please follow the instructions below to get started: "Using an existing STRANDS installation and developing in it"    
 
 
@@ -64,7 +64,7 @@ If you need to update it simply do the following as user `strands`:
            wstool merge https://raw.github.com/strands-project/strands_systems/master/strands_rosinstall/strands-desktop-full.yaml
            
   1. `wstool update` (gets everything from github, basically this runs `git pull` for you in all the repositories)
-  1. `cd ..` and build it: `catkin_make`
+  1. UPDATE: `cd ..` and build it: ~~catkin_make~~ `catkin_make -DCMAKE_BUILD_TYPE=Release` _The build type argument prevents the generation of debug symbols and uses -O3 optimization._
  
 You may consider to put this in a cronjob for your user `strands` to update every night after a successful jenkins build. This will make sure that you always have the latest installation.
 
