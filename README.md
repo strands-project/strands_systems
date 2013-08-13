@@ -37,7 +37,7 @@ The following are instruction to set up a clean STRANDS system with all packages
       1. install MORSE: `bash setup.sh` (this will install MORSE directly from github in the latest master version and also make sure all other required packages are installed)
   * MIRA: on the robot make sure that MIRA is installed
 1. install [wstool](http://ros.org/wiki/wstool): `sudo apt-get install python-wstool`  (*justification:* this is needed to manage the repositories)
-1. create your workspace, e.g. `mkdir /opt/strands/strands_catkin_ws`, and then change into it, e.g. `cd /opt/strands/strands_catkin_ws`
+1. create your workspace, ~~e.g.~~ `mkdir /opt/strands/strands_catkin_ws`, and then change into it, ~~e.g.~~ `cd /opt/strands/strands_catkin_ws`
 1. get all the repositories for either the robot or the desktop version:
       * desktop: run 
            ```
@@ -107,7 +107,7 @@ As user `strands` run:
 ### Setup your local CATKIN development workspace
 This assumes you have a full current installation of the STRANDS system (e.g. in `/opt/strands` as described above). You checkout and create your own packages to work on in your local development workspace as described here. In ROS terms that is you *overlay* your own workspace. By overlaying, your packages hide the system one with the same name. E.g., if you are working on your own `strands_morse` than fork/branch `strands_morse` on github and clone it into your *own* workspace that you overlay over the system workspace. Everything you have in your own workspace will "overrule" the system stuff. But you will always have a clean system workspace (in `/opt/strands` if you followed the above).
 
-1. create your workspace, e.g `mkdir catkin_ws`, and then change into it, e.g. `cd catkin_ws`
+1. create your workspace, ~~e.g~~ `mkdir catkin_ws`, and then change into it, ~~e.g.~~ `cd catkin_ws`
 1. initialse the catkin workspace: `mkdir src; cd src; catkin_init_workspace; cd ..`
 1. get or create packages to work on, either do
     1. **initialise from a whole system using wstool:**  run `wstool init src <add-your-system-url-here>`, e.g. using
