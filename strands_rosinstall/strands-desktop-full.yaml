@@ -39,12 +39,8 @@
     uri: https://github.com/strands-project/vision.git
 
 - git:
-    local-name: 3d_mapping
-    uri: https://github.com/strands-project/3d_mapping.git
-
-- git:
-    local-name: scitos_3d_mapping_and_navigation
-    uri: https://github.com/strands-project/scitos_3d_mapping_and_navigation.git
+    local-name: scitos_3d_mapping
+    uri: https://github.com/strands-project/scitos_3d_mapping.git
 
 - git:
     local-name: strands_perception_people
