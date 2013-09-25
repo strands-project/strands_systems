@@ -57,7 +57,10 @@ The following are instruction to set up a clean STRANDS system with all packages
 
 
 ### update the stable installation
-If you need to update it simply do the following as user `strands`: 
+If you need to update it simply do the following as user `strands`.
+If you want to update your stable workspace with a version that has successfully been tested on jenkins, look here: https://github.com/strands-project/strands_ci/wiki#updating-a-workspace-with-software-versions-that-have-been-successfully-tested-on-jenkins. You can add the script that is used there to your crontab to automatically update your system to the latest stable over night. 
+Alternatively, you can follow the steps below.
+
   1. `cd /opt/strands/strands_catkin_ws/src`
   1. `wstool merge URL` (where <strong>URL</strong> is whatever your system rosinstall configuration was that you chose earlier; this will make sure that you still have all the different repositories that belong to desktop-full installed, even if new ones are added. Usually you will see *Merge caused no change, no new elements found*, which is fine if the rosinstall config hasn't changed). For example:
            
@@ -88,10 +91,6 @@ As user `strands` run:
  1. `cmake -DCMAKE_INSTALL_PREFIX=${workspace} -DPYMORSE_SUPPORT=ON -DPYTHON_EXECUTABLE=${workspace}/bin/python3.3 -DBUILD_ROS_SUPPORT=ON ..` where `${workspace}` should be set to your installation location (e.g. `/opt/strands`) 
  1. `make install`
 
-
-### Automate update procedures
-
-[here](https://gist.github.com/marc-hanheide/e392482740a865e15ed9) is a tiny script that I (Marc) run every day on my machine to make sure I have the latest version.
 
 ## Using an existing STRANDS installation and developing in it
 * in your own `~/.bashrc` configure your shell to use the stuff in `/opt/strands` by adding the following at the end:
