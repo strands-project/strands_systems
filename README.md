@@ -81,7 +81,10 @@ As user `strands` run:
  1. `cd /opt/strands/src/morse`
  1. `git pull`
  1. `cd build`
- 1. `cmake -DCMAKE_INSTALL_PREFIX=${workspace} -DPYMORSE_SUPPORT=ON -DPYTHON_EXECUTABLE=${workspace}/bin/python3.3 -DBUILD_ROS_SUPPORT=ON ..` where `${workspace}` should be set to your installation location (e.g. `/opt/strands`)
+ 2.   
+           cmake -DCMAKE_INSTALL_PREFIX=${workspace} -DPYMORSE_SUPPORT=ON -DPYTHON_EXECUTABLE=${workspace}/bin/python3.3 -DBUILD_ROS_SUPPORT=ON ..
+           
+    where `${workspace}` should be set to your installation location (e.g. `/opt/strands`)
  1. `make install`
 
 ### migrating your MORSE installation from morse-simulator/morse to strands-project/morse
@@ -92,7 +95,10 @@ As user `strands` run:
  1. `git remote add strands-morse https://github.com/strands-project/morse.git`
  1. `git pull strands-morse master`
  1. `cd build`
- 1. `cmake -DCMAKE_INSTALL_PREFIX=${workspace} -DPYMORSE_SUPPORT=ON -DPYTHON_EXECUTABLE=${workspace}/bin/python3.3 -DBUILD_ROS_SUPPORT=ON ..` where `${workspace}` should be set to your installation location (e.g. `/opt/strands`) 
+ 1. 
+ cmake -DCMAKE_INSTALL_PREFIX=${workspace} -DPYMORSE_SUPPORT=ON -DPYTHON_EXECUTABLE=${workspace}/bin/python3.3 -DBUILD_ROS_SUPPORT=ON ..
+
+    where `${workspace}` should be set to your installation location (e.g. `/opt/strands`) 
  1. `make install`
 
 
