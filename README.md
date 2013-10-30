@@ -75,6 +75,14 @@ Alternatively, you can follow the steps below.
  
 You may consider to put this in a cronjob for your user `strands` to update every night after a successful jenkins build. This will make sure that you always have the latest installation.
 
+### adding a library to your python3.3 installation, e.g. numpy:
+
+ 1. cd ${workspace}/tmp && git clone https://github.com/numpy/numpy.git
+ 1. cd numpy && git checkout v1.7.1
+ 1. ${workspace}/bin/python3.3 setup.py install
+
+where `${workspace}` is, e.g., `/opt/strands`.
+
 ### updating MORSE
 As user `strands` run:
 
