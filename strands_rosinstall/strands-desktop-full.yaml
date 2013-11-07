@@ -56,13 +56,6 @@
    uri: https://github.com/strands-project/executive_smach.git
    version: groovy-devel
 
-
 - git: 
-   local-name: strands_systems_linda
+   local-name: strands_systems
    uri: 'https://github.com/strands-project/strands_systems.git'
-   version: linda-stable
-
-- git: 
-   local-name: uol-open-day
-   uri: 'https://github.com/LCAS/uol-openday-robot.git'
-
