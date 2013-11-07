@@ -102,6 +102,11 @@ ${workspace}/bin/python3.3 setup.py install
 cd ${workspace}/tmp && git clone https://github.com/ros/catkin.git
 cd catkin && git checkout 0.5.65
 ${workspace}/bin/python3.3 setup.py install
+cd ${workspace}/tmp && git clone https://github.com/numpy/numpy.git
+cd numpy && git checkout v1.7.1
+${workspace}/bin/python3.3 setup.py install
+
+
 
 echo "Install MORSE (latest from git master branch)"
 (cd ${workspace}/src && git clone https://github.com/strands-project/morse.git && \

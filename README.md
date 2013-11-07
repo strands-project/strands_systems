@@ -11,7 +11,11 @@ The following are instruction to set up a clean STRANDS system with all packages
 
 1. make sure you have all the ROS and other useful packages:
   * basic build stuff: `sudo apt-get install cmake git  zlib1g-dev  git-cvs wget python-pip`
-  * Adding the ROS repository: `sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros-latest.list'`
+  * Adding the ROS repository: 
+           ```
+           sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros-latest.list'
+           
+           ```
   * Adding the key of the ROS repository: `wget http://packages.ros.org/ros.key -O - | sudo apt-key add -`
   * Getting the package list from the ROS repository: `sudo apt-get update`
   * ROS basic installation: `sudo apt-get install ros-groovy-desktop-full python-rosinstall` 
@@ -71,13 +75,24 @@ Alternatively, you can follow the steps below.
  
 You may consider to put this in a cronjob for your user `strands` to update every night after a successful jenkins build. This will make sure that you always have the latest installation.
 
+### adding a library to your python3.3 installation, e.g. numpy:
+
+ 1. cd ${workspace}/tmp && git clone https://github.com/numpy/numpy.git
+ 1. cd numpy && git checkout v1.7.1
+ 1. ${workspace}/bin/python3.3 setup.py install
+
+where `${workspace}` is, e.g., `/opt/strands`.
+
 ### updating MORSE
 As user `strands` run:
 
  1. `cd /opt/strands/src/morse`
  1. `git pull`
  1. `cd build`
- 1. `cmake -DCMAKE_INSTALL_PREFIX=${workspace} -DPYMORSE_SUPPORT=ON -DPYTHON_EXECUTABLE=${workspace}/bin/python3.3 -DBUILD_ROS_SUPPORT=ON ..` where `${workspace}` should be set to your installation location (e.g. `/opt/strands`)
+ 2.   
+           cmake -DCMAKE_INSTALL_PREFIX=${workspace} -DPYMORSE_SUPPORT=ON -DPYTHON_EXECUTABLE=${workspace}/bin/python3.3 -DBUILD_ROS_SUPPORT=ON ..
+           
+    where `${workspace}` should be set to your installation location (e.g. `/opt/strands`)
  1. `make install`
 
 ### migrating your MORSE installation from morse-simulator/morse to strands-project/morse
@@ -88,7 +103,10 @@ As user `strands` run:
  1. `git remote add strands-morse https://github.com/strands-project/morse.git`
  1. `git pull strands-morse master`
  1. `cd build`
- 1. `cmake -DCMAKE_INSTALL_PREFIX=${workspace} -DPYMORSE_SUPPORT=ON -DPYTHON_EXECUTABLE=${workspace}/bin/python3.3 -DBUILD_ROS_SUPPORT=ON ..` where `${workspace}` should be set to your installation location (e.g. `/opt/strands`) 
+ 1. 
+ cmake -DCMAKE_INSTALL_PREFIX=${workspace} -DPYMORSE_SUPPORT=ON -DPYTHON_EXECUTABLE=${workspace}/bin/python3.3 -DBUILD_ROS_SUPPORT=ON ..
+
+    where `${workspace}` should be set to your installation location (e.g. `/opt/strands`) 
  1. `make install`
 
 
