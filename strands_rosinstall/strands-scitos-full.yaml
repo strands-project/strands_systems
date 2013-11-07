@@ -59,3 +59,7 @@
    local-name: catkinized_smach
    uri: https://github.com/strands-project/executive_smach.git
    version: groovy-devel
+
+- git: 
+   local-name: strands_systems
+   uri: 'https://github.com/strands-project/strands_systems.git'
