@@ -1,0 +1,31 @@
+<launch>
+  <arg name="env" default="uol_mht"/>
+  <arg name="pos_x" default="-4.10444888141"/>
+  <arg name="pos_y" default="-1.32365772104"/>
+  <arg name="ori_z" default="-0.698060797088"/>
+  <arg name="ori_w" default="0.716038493078"/>
+
+  <include file="$(find strands_datacentre)/launch/datacentre.launch" />
+
+  <!-- Scitos robot -->
+  <include file="$(find strands_morse)/launch/scitos.launch"/>
+
+  <node pkg="strands_morse" type="simulator.sh" respawn="false" name="strands_morse" output="screen" args="uol $(arg env).py"/>
+  <include file="$(find scitos_docking)/launch/charging.launch" />
+
+  <!-- 2D Navigation -->
+  <include file="$(find scitos_2d_navigation)/launch/scitos_2d_nav.launch">
+      <arg name="map" value="$(find strands_morse)/uol/maps/uol_mht_III.yaml"/>
+  </include>
+
+
+  <include file="$(find ros_mary_tts)/launch/ros_mary.launch"/>
+     
+  <node name="pose_initialiser" pkg="pose_initialiser" type="pose_initialiser.py" output="screen" args="$(arg pos_x) $(arg pos_y) $(arg ori_z) $(arg ori_w)"/>
+
+  <!-- Long Term Patroller   -->   
+  <node name="nav_monitor" pkg="nav_monitor" type="nav_monitor.py" output="screen"/>
+
+  <node name="patroller" pkg="waypoint_patroller" type="long_term_patroller.py" output="screen" args="uol_sim_mht_III false -1"/>
+   
+</launch>
