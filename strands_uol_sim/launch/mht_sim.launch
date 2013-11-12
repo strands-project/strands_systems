@@ -20,7 +20,8 @@
 
 
   <include file="$(find ros_mary_tts)/launch/ros_mary.launch"/>
-     
+
+  <node pkg="robot_pose_publisher" type="robot_pose_publisher" name="robot_pose_publisher" />
   <node name="pose_initialiser" pkg="pose_initialiser" type="pose_initialiser.py" output="screen" args="$(arg pos_x) $(arg pos_y) $(arg ori_z) $(arg ori_w)"/>
 
   <!-- Long Term Patroller   -->   
