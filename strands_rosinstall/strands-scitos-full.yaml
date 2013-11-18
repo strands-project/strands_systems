@@ -63,3 +63,13 @@
 - git: 
    local-name: strands_systems
    uri: 'https://github.com/strands-project/strands_systems.git'
+
+- git: 
+   local-name: rosbridge_suite
+   uri: 'https://github.com/strands-project/rosbridge_suite.git'
+   version: readonly_capabilities
+   
+- git: 
+   local-name: mjpeg_server
+   uri: 'https://github.com/strands-project/mjpeg_server.git'
+   version: groovy-devel
