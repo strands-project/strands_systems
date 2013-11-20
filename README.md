@@ -12,10 +12,12 @@ The following are instruction to set up a clean STRANDS system with all packages
 1. make sure you have all the ROS and other useful packages:
   * basic build stuff: `sudo apt-get install cmake git  zlib1g-dev  git-cvs wget python-pip`
   * Adding the ROS repository: 
-           ```
-           sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros-latest.list'
+
            
-           ```
+           sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros-latest.list'
+
+           
+
   * Adding the key of the ROS repository: `wget http://packages.ros.org/ros.key -O - | sudo apt-key add -`
   * Getting the package list from the ROS repository: `sudo apt-get update`
   * ROS basic installation: `sudo apt-get install ros-groovy-desktop-full python-rosinstall` 
