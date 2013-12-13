@@ -59,6 +59,7 @@ The following are instruction to set up a clean STRANDS system with all packages
 1. install all dependencies automatically: `rosdep install --from-paths src --ignore-src --rosdistro groovy -y -r`
 1. UPDATE: build the workspace: ~~catkin_make~~ `catkin_make -DCMAKE_BUILD_TYPE=Release` _The build type argument prevents the generation of debug symbols and uses -O3 optimization._
 1. now your system is ready to go. Please follow the instructions below to get started: "Using an existing STRANDS installation and developing in it"    
+1. you may want to install `roscore` to automatically start when the machine is booted: https://github.com/laas/ros_comm_upstart
 
 
 
