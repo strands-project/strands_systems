@@ -78,4 +78,9 @@
    local-name: ros_twitter_bootstrap
    uri: 'https://github.com/strands-project/ros_twitter_bootstrap.git'
    
+- git: 
+   local-name: strands_ci
+   uri: 'https://github.com/strands-project/strands_ci.git'
+   version: master
+   
    
