@@ -83,4 +83,6 @@
    uri: 'https://github.com/strands-project/strands_ci.git'
    version: master
    
-   
+- git:
+    local-name: strands_msgs
+    uri: https://github.com/strands-project/strands_msgs.git
