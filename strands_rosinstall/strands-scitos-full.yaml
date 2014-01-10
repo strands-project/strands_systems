@@ -68,12 +68,12 @@
    local-name: rosbridge_suite
    uri: 'https://github.com/strands-project/rosbridge_suite.git'
    version: readonly_capabilities
-   
+
 - git: 
    local-name: mjpeg_server
    uri: 'https://github.com/strands-project/mjpeg_server.git'
    version: groovy-devel
-   
+
 - git: 
    local-name: strands_ui
    uri: 'https://github.com/strands-project/strands_ui.git'
@@ -85,3 +85,8 @@
 - git:
     local-name: strands_msgs
     uri: https://github.com/strands-project/strands_msgs.git
+
+- git: 
+   local-name: ros_datacentre
+   uri: 'https://github.com/strands-project/ros_datacentre.git'
+   version: master
