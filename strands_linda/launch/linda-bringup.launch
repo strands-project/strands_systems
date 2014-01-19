@@ -13,7 +13,7 @@
     <!-- Additional nodes -->
         <include file="$(find scitos_docking)/launch/charging_mux.launch"/>
         <include file="$(find scitos_ptu_sweep)/launch/ptu_sweep.launch"/>
-        <include file="$(find scitos_ramp)/launch/rampclimbing_mux.launch"/>
+        <include file="$(find scitos_ramp_climb)/launch/rampclimbing_mux.launch"/>
 
 
 </launch>
