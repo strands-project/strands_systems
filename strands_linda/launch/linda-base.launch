@@ -1,7 +1,12 @@
 <launch>
-	<include file="$(find scitos_bringup)/launch/scitos.launch" />
-	<include file="$(find strands_webtools)/webtools.launch" />
-	<include file="$(find scitos_cmd_vel_mux)/launch/mux.launch" />
-	<include file="$(find scitos_teleop)/launch/teleop_joystick_mux.launch" />
-	<include file="$(find ros_mary_tts)/launch/ros_mary.launch" />    
+    <!-- SCITOS no camera -->
+        <include file="$(find scitos_bringup)/launch/no_camera.launch"/>     
+
+    <!-- Additional nodes -->
+        <include file="$(find strands_datacentre)/launch/datacentre.launch"/>     
+        <include file="$(find scitos_cmd_vel_mux)/launch/mux.launch" />
+        <include file="$(find scitos_teleop)/launch/teleop_joystick_mux.launch" />
+        <node name="odometry_mileage" pkg="odometry_mileage" type="odometry_mileage"/>
+        <node name="set_mondev" pkg="linda_utils" type="set_mondev.sh" />
+
 </launch>
