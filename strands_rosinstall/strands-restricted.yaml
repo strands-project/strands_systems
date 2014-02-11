@@ -1,0 +1,15 @@
+# people perception
+- git:
+    local-name: strands_perception_people
+    uri: https://github.com/strands-project/strands_perception_people.git
+
+# QSR
+- git:
+    local-name: strands_qsr
+    uri: https://github.com/strands-project/strands_qsr.git
+    
+# V4R
+- git:
+    local-name: v4r
+    uri: https://github.com/strands-project/v4r.git
+
