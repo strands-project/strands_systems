@@ -2,6 +2,11 @@
     local-name: autonomous_patrolling
     uri: https://github.com/strands-project/autonomous_patrolling.git
 
+# Tools
+- git:
+    local-name: strands_utils
+    uri: https://github.com/strands-project/strands_utils.git
+
 # Interfaces
 - git:
     local-name: strands_webtools
