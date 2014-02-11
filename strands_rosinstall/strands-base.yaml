@@ -52,8 +52,4 @@
    uri: 'https://github.com/strands-project/ros_datacentre.git'
    version: master
    
-# Systems
-- git: 
-   local-name: strands_systems
-   uri: 'https://github.com/strands-project/strands_systems.git'
 
