@@ -25,7 +25,7 @@
 - git:
    local-name: catkinized_navigation
    uri: https://github.com/strands-project/ros-navigation-fork.git
-   version: groovy-devel-catkinized
+   version: hydro-devel
 
 # Behaviour & scheduling
 - git:
@@ -35,7 +35,7 @@
 - git:
    local-name: catkinized_smach
    uri: https://github.com/strands-project/executive_smach.git
-   version: groovy-devel
+   version: hydro-devel
 
 # Tools
 - git:
