@@ -33,11 +33,6 @@
    uri: https://github.com/strands-project/executive_smach.git
    version: hydro-devel
 
-# Tools
-- git:
-    local-name: strands_utils
-    uri: https://github.com/strands-project/strands_utils.git
-
 # Data management
 - git:
     local-name: data_compression
