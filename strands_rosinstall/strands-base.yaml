@@ -29,10 +29,6 @@
 
 # Behaviour & scheduling
 - git:
-    local-name: autonomous_patrolling
-    uri: https://github.com/strands-project/autonomous_patrolling.git
-
-- git:
    local-name: catkinized_smach
    uri: https://github.com/strands-project/executive_smach.git
    version: hydro-devel
