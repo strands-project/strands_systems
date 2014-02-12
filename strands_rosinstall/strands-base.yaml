@@ -2,6 +2,7 @@
 - git:
     local-name: scitos_common
     uri: https://github.com/strands-project/scitos_common.git
+    version: hydro-devel
 
 - git:
     local-name: scitos_apps
