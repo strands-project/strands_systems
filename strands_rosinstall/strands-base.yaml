@@ -11,8 +11,6 @@
     local-name: strands_msgs
     uri: https://github.com/strands-project/strands_msgs.git
 
-
-
 # mapping & navigation
 - git:
     local-name: scitos_3d_mapping
@@ -29,7 +27,7 @@
 
 # Behaviour & scheduling
 - git:
-   local-name: catkinized_smach
+   local-name: executive_smach
    uri: https://github.com/strands-project/executive_smach.git
    version: hydro-devel
 
