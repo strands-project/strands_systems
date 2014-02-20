@@ -1,0 +1,31 @@
+<!-- base file for launching the marathon system (w/o 3d obstacle avoidance). Run HOSTNAME=bob HOST_IP=10.0.11.158 roslaunch strands_bob bob-bringup.launch
+ and roslaunch waypoint_patroller long_term_patroller.launch waypoints:=lg_20131115 -->
+
+<launch>
+    <arg name="with_camera" default="true" />
+    <arg name="with_chest_camera" default="false" />
+    <arg name="inverted" default="no" />
+    <arg name="map" default="/opt/maps/lg_20131115/map.yaml" />
+    <arg name="js" default="/dev/input/rumblepad" />
+
+    
+
+    <include file="$(find strands_datacentre)/launch/datacentre.launch"/>
+    <include file="$(find scitos_bringup)/launch/scitos.launch">
+        <arg name="with_camera" value="$(arg with_camera)" />
+        <arg name="with_chest_camera" value="$(arg with_chest_camera)" />
+        <arg name="inverted"  value="$(arg inverted)" />    
+    </include>
+     <include file="$(find scitos_teleop)/launch/teleop_joystick.launch">
+        <arg name="js" value="$(arg js)" />
+    </include>
+    <include file="$(find scitos_docking)/launch/charging.launch"/>
+    <include file="$(find scitos_2d_navigation)/launch/scitos_2d_nav.launch">
+        <arg name="with_camera" value="$(arg with_chest_camera)" />
+        <arg name="map"  value="$(arg map)" />    
+    </include>
+    <include file="$(find marathon_touch_gui)/launch/marathon_gui_dependencies.launch"/>
+     
+
+
+</launch>
