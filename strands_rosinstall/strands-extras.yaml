@@ -1,0 +1,35 @@
+- git:
+    local-name: autonomous_patrolling
+    uri: https://github.com/strands-project/autonomous_patrolling.git
+
+# Tools
+- git:
+    local-name: strands_utils
+    uri: https://github.com/strands-project/strands_utils.git
+
+# Interfaces
+- git:
+    local-name: strands_webtools
+    uri: https://github.com/strands-project/strands_webtools.git
+
+- git: 
+   local-name: ros_twitter_bootstrap
+   uri: 'https://github.com/strands-project/ros_twitter_bootstrap.git'
+
+- git:
+    local-name: strands_hri
+    uri: https://github.com/strands-project/strands_hri.git
+
+- git: 
+   local-name: rosbridge_suite
+   uri: 'https://github.com/strands-project/rosbridge_suite.git'
+   version: readonly_capabilities
+
+- git: 
+   local-name: mjpeg_server
+   uri: 'https://github.com/strands-project/mjpeg_server.git'
+   version: groovy-devel
+   
+- git: 
+   local-name: strands_ui
+   uri: 'https://github.com/strands-project/strands_ui.git'

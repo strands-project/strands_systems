@@ -1,0 +1,47 @@
+# SCITOS general
+- git:
+    local-name: scitos_common
+    uri: https://github.com/strands-project/scitos_common.git
+    version: hydro-devel
+
+- git:
+    local-name: scitos_apps
+    uri: https://github.com/strands-project/scitos_apps.git
+
+- git:
+    local-name: strands_msgs
+    uri: https://github.com/strands-project/strands_msgs.git
+
+# mapping & navigation
+- git:
+    local-name: scitos_3d_mapping
+    uri: https://github.com/strands-project/scitos_3d_mapping.git
+    version: hydro-devel
+
+- git:
+    local-name: scitos_2d_navigation
+    uri: https://github.com/strands-project/scitos_2d_navigation.git
+    version: hydro-devel
+
+#- git:
+#   local-name: catkinized_navigation
+#   uri: https://github.com/strands-project/ros-navigation-fork.git
+#   version: hydro-devel
+
+# Behaviour & scheduling
+- git:
+   local-name: executive_smach
+   uri: https://github.com/strands-project/executive_smach.git
+   version: hydro-devel
+
+# Data management
+- git:
+    local-name: data_compression
+    uri: https://github.com/strands-project/data_compression.git
+
+- git: 
+   local-name: ros_datacentre
+   uri: 'https://github.com/strands-project/ros_datacentre.git'
+   version: master
+   
+
