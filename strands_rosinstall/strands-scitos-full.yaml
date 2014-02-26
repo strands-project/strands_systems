@@ -89,4 +89,4 @@
 - git: 
    local-name: ros_datacentre
    uri: 'https://github.com/strands-project/ros_datacentre.git'
-   version: master
+   version: groovy-devel
