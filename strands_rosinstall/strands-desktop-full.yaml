@@ -17,6 +17,7 @@
 - git:
     local-name: autonomous_patrolling
     uri: https://github.com/strands-project/autonomous_patrolling.git
+    version: groovy-devel
 
 - git:
     local-name: strands_morse
