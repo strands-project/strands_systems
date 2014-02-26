@@ -5,7 +5,7 @@
   <arg name="ori_z" default="-0.698060797088"/>
   <arg name="ori_w" default="0.716038493078"/>
 
-  <include file="$(find strands_datacentre)/launch/datacentre.launch" />
+  <include file="$(find ros_datacentre)/launch/datacentre.launch" />
 
   <!-- Scitos robot -->
   <include file="$(find strands_morse)/launch/scitos.launch"/>
