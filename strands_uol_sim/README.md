@@ -7,9 +7,9 @@ This package contains files that are necessary for running STRANDS simulations o
 ### Setting up Autonomous Patrolling Simulation
 
 1. Calibrate charging station parameters:
-   * Launch strands_datacentre:
+   * Launch ros_datacentre:
            ```
-           roslaunch strands_datacentre datacentre.launch
+           roslaunch ros_datacentre datacentre.launch
            
            ```
    * Launch UOL_MHT simulation:
@@ -29,9 +29,9 @@ This package contains files that are necessary for running STRANDS simulations o
            
            ```
 2. Insert waypoints on database:
-   * Launch strands_datacentre:
+   * Launch ros_datacentre:
            ```
-           roslaunch strands_datacentre datacentre.launch
+           roslaunch ros_datacentre datacentre.launch
            
            ```
    * Insert waypoints in DB
