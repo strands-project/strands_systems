@@ -1,5 +1,5 @@
 # Simulation
-- git:
-    local-name: strands_morse
-    uri: https://github.com/strands-project/strands_morse.git
-    version: hydro-devel
+   - git:
+        local-name: strands_morse
+        uri: https://github.com/strands-project/strands_morse.git
+        version: hydro-devel
