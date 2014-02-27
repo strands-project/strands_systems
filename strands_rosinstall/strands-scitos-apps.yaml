@@ -1,4 +1,0 @@
-- git:
-    local-name: scitos_apps
-    uri: https://github.com/strands-project/scitos_apps.git
-    version: hydro-devel
