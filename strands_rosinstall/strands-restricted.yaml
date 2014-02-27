@@ -5,10 +5,10 @@
     version: hydro-devel
 
 # QSR
-- git:
-    local-name: strands_qsr
-    uri: https://github.com/strands-project/strands_qsr.git
-    version: hydro-devel
+#- git:
+#    local-name: strands_qsr
+#    uri: https://github.com/strands-project/strands_qsr.git
+#    version: hydro-devel
     
 # V4R
 - git:
