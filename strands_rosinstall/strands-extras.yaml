@@ -1,24 +1,29 @@
 - git:
     local-name: autonomous_patrolling
     uri: https://github.com/strands-project/autonomous_patrolling.git
+    version: hydro-devel
 
 # Tools
 - git:
     local-name: strands_utils
     uri: https://github.com/strands-project/strands_utils.git
+    version: hydro-devel
 
 # Interfaces
 - git:
     local-name: strands_webtools
     uri: https://github.com/strands-project/strands_webtools.git
+    version: hydro-devel
 
 - git: 
    local-name: ros_twitter_bootstrap
    uri: 'https://github.com/strands-project/ros_twitter_bootstrap.git'
+   version: hydro-devel
 
 - git:
     local-name: strands_hri
     uri: https://github.com/strands-project/strands_hri.git
+    version: hydro-devel
 
 - git: 
    local-name: rosbridge_suite
@@ -28,8 +33,9 @@
 - git: 
    local-name: mjpeg_server
    uri: 'https://github.com/strands-project/mjpeg_server.git'
-   version: groovy-devel
+   version: hydro-devel
    
 - git: 
    local-name: strands_ui
    uri: 'https://github.com/strands-project/strands_ui.git'
+   version: hydro-devel

@@ -7,10 +7,12 @@
 - git:
     local-name: scitos_apps
     uri: https://github.com/strands-project/scitos_apps.git
+    version: hydro-devel
 
 - git:
     local-name: strands_msgs
     uri: https://github.com/strands-project/strands_msgs.git
+    version: hydro-devel
 
 # mapping & navigation
 - git:
@@ -38,10 +40,11 @@
 - git:
     local-name: data_compression
     uri: https://github.com/strands-project/data_compression.git
+    version: hydro-devel
 
 - git: 
    local-name: ros_datacentre
    uri: 'https://github.com/strands-project/ros_datacentre.git'
-   version: master
+   version: hydro-devel
    
 

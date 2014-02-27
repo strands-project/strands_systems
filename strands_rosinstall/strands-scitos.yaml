@@ -1,11 +1,14 @@
 - git:
     local-name: scitos_drivers
     uri: https://github.com/strands-project/scitos_drivers.git
+    version: hydro-devel
 
 - git:
     local-name: scitos_apps
     uri: https://github.com/strands-project/scitos_apps.git
+    version: hydro-devel
 
 - git:
     local-name: scitos_robot
     uri: https://github.com/strands-project/scitos_robot.git
+    version: hydro-devel
