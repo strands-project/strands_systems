@@ -5,11 +5,6 @@
     version: hydro-devel
 
 - git:
-    local-name: scitos_apps
-    uri: https://github.com/strands-project/scitos_apps.git
-    version: hydro-devel
-
-- git:
     local-name: strands_msgs
     uri: https://github.com/strands-project/strands_msgs.git
     version: hydro-devel
