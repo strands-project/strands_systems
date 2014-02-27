@@ -86,11 +86,11 @@ echo "Install ROS on ${ubuntu_codename} in /opt needs to sudo"
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros-latest.list'
 wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
 sudo apt-get update
-sudo apt-get install ros-groovy-desktop-full python-rosinstall git-cvs
+sudo apt-get install ros-hydro-desktop-full python-rosinstall git-cvs
 
 sudo rosdep init
 rosdep update
-echo "[ -f /opt/ros/groovy/setup.bash ] && source /opt/ros/groovy/setup.bash" >> ${workspace}/.bashrc
+echo "[ -f /opt/ros/hydro/setup.bash ] && source /opt/ros/hydro/setup.bash" >> ${workspace}/.bashrc
 
 echo "Install rospkg w/ python3.3"
 cd ${workspace}/tmp && git clone https://github.com/ros/rospkg.git
