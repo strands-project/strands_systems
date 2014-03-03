@@ -3,7 +3,10 @@
         <include file="$(find scitos_bringup)/launch/no_camera.launch"/>     
 
     <!-- Additional nodes -->
-        <include file="$(find strands_datacentre)/launch/datacentre.launch"/>     
+	    <include file="$(find ros_datacentre)/launch/datacentre.launch">
+		    <arg name="db_path" value="/opt/strands/strands_datacentre"/>
+	    </include>
+   
         <include file="$(find scitos_cmd_vel_mux)/launch/mux.launch" />
         <include file="$(find scitos_teleop)/launch/teleop_joystick_mux.launch" />
         <node name="odometry_mileage" pkg="odometry_mileage" type="odometry_mileage"/>
