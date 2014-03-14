@@ -28,7 +28,7 @@
 - git: 
    local-name: rosbridge_suite
    uri: 'https://github.com/strands-project/rosbridge_suite.git'
-   version: readonly_capabilities
+   version: hydro-readonly
 
 - git: 
    local-name: mjpeg_server
