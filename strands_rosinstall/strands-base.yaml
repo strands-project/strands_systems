@@ -20,10 +20,13 @@
     uri: https://github.com/strands-project/scitos_2d_navigation.git
     version: hydro-devel
 
-#- git:
-#   local-name: catkinized_navigation
-#   uri: https://github.com/strands-project/ros-navigation-fork.git
-#   version: hydro-devel
+    
+- git:
+    local-name: strands_navigation
+    uri: https://github.com/strands-project/strands_navigation.git
+    version: hydro-devel    
+    
+    
 
 # Behaviour & scheduling
 - git:
