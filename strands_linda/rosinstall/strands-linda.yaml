@@ -1,0 +1,127 @@
+# strands_base
+# SCITOS general
+- git:
+    local-name: scitos_common
+    uri: https://github.com/strands-project/scitos_common.git
+    version: hydro-devel
+
+- git:
+    local-name: strands_msgs
+    uri: https://github.com/strands-project/strands_msgs.git
+    version: hydro-devel
+
+# mapping & navigation
+- git:
+    local-name: scitos_3d_mapping
+    uri: https://github.com/strands-project/scitos_3d_mapping.git
+    version: hydro-devel
+
+- git:
+    local-name: scitos_2d_navigation
+    uri: https://github.com/strands-project/scitos_2d_navigation.git
+    version: hydro-devel
+
+    
+- git:
+    local-name: strands_navigation
+    uri: https://github.com/strands-project/strands_navigation.git
+    version: hydro-devel    
+    
+# Behaviour & scheduling
+- git:
+   local-name: executive_smach
+   uri: https://github.com/strands-project/executive_smach.git
+   version: hydro-devel
+
+# Data management
+- git:
+    local-name: data_compression
+    uri: https://github.com/strands-project/data_compression.git
+    version: hydro-devel
+
+- git: 
+   local-name: ros_datacentre
+   uri: 'https://github.com/strands-project/ros_datacentre.git'
+   version: hydro-devel
+
+
+# strands_extras
+- git:
+    local-name: autonomous_patrolling
+    uri: https://github.com/strands-project/autonomous_patrolling.git
+    version: hydro-devel
+
+# Tools
+- git:
+    local-name: strands_utils
+    uri: https://github.com/strands-project/strands_utils.git
+    version: hydro-devel
+
+# Interfaces
+- git:
+    local-name: strands_webtools
+    uri: https://github.com/strands-project/strands_webtools.git
+    version: hydro-devel
+
+- git: 
+   local-name: ros_twitter_bootstrap
+   uri: 'https://github.com/strands-project/ros_twitter_bootstrap.git'
+   version: hydro-devel
+
+- git:
+    local-name: strands_hri
+    uri: https://github.com/strands-project/strands_hri.git
+    version: hydro-devel
+
+- git: 
+   local-name: rosbridge_suite
+   uri: 'https://github.com/strands-project/rosbridge_suite.git'
+   version: hydro-readonly
+
+- git: 
+   local-name: mjpeg_server
+   uri: 'https://github.com/strands-project/mjpeg_server.git'
+   version: hydro-devel
+   
+- git: 
+   local-name: strands_ui
+   uri: 'https://github.com/strands-project/strands_ui.git'
+   version: hydro-devel
+
+# strands-restricted
+
+# people perception
+- git:
+    local-name: strands_perception_people
+    uri: https://github.com/strands-project/strands_perception_people.git
+    version: hydro-devel
+
+# QSR
+#- git:
+#    local-name: strands_qsr
+#    uri: https://github.com/strands-project/strands_qsr.git
+#    version: hydro-devel
+    
+# V4R
+- git:
+    local-name: v4r
+    uri: https://github.com/strands-project/v4r.git
+    version: hydro-devel
+
+# strands-scitos
+
+- git:
+    local-name: scitos_drivers
+    uri: https://github.com/strands-project/scitos_drivers.git
+    version: linda-devel
+
+- git:
+    local-name: scitos_apps
+    uri: https://github.com/strands-project/scitos_apps.git
+    version: hydro-devel
+
+- git:
+    local-name: scitos_robot
+    uri: https://github.com/strands-project/scitos_robot.git
+    version: hydro-devel
+
