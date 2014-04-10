@@ -20,19 +20,23 @@
     uri: https://github.com/strands-project/scitos_2d_navigation.git
     version: hydro-devel
 
-    
 - git:
     local-name: strands_navigation
     uri: https://github.com/strands-project/strands_navigation.git
     version: hydro-devel    
-    
-    
+
 
 # Behaviour & scheduling
 - git:
    local-name: executive_smach
    uri: https://github.com/strands-project/executive_smach.git
    version: hydro-devel
+
+- git:
+   local-name: strands_executive
+   uri: https://github.com/strands-project/strands_executive.git
+   version: hydro-devel
+
 
 # Data management
 - git:
