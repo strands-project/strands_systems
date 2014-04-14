@@ -1,4 +1,10 @@
 # strands_base
+
+- git:
+    local-name: strands_systems
+    uri: https://github.com/strands-project/strands_systems.git
+    version: hydro-devel
+
 # SCITOS general
 - git:
     local-name: scitos_common
