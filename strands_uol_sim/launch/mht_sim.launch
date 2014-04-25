@@ -5,7 +5,9 @@
   <arg name="ori_z" default="-0.698060797088"/>
   <arg name="ori_w" default="0.716038493078"/>
 
-  <include file="$(find strands_datacentre)/launch/datacentre.launch" />
+  <include file="$(find ros_datacentre)/launch/datacentre.launch">
+      <arg name="db_path" value="/opt/strands/strands_datacentre"/>
+  </include>
 
   <!-- Scitos robot -->
   <include file="$(find strands_morse)/launch/scitos.launch"/>
@@ -23,9 +25,10 @@
      
   <node name="pose_initialiser" pkg="pose_initialiser" type="pose_initialiser.py" output="screen" args="$(arg pos_x) $(arg pos_y) $(arg ori_z) $(arg ori_w)"/>
 
-  <!-- Long Term Patroller   -->   
-  <node name="nav_monitor" pkg="nav_monitor" type="nav_monitor.py" output="screen"/>
 
-  <node name="patroller" pkg="waypoint_patroller" type="long_term_patroller.py" output="screen" args="uol_sim_mht_III false -1"/>
+  <!-- Long Term Patroller   -->   
+  <!-- <node name="nav_monitor" pkg="nav_monitor" type="nav_monitor.py" output="screen"/> -->
+
+  <!-- <node name="patroller" pkg="waypoint_patroller" type="long_term_patroller.py" output="screen" args="uol_sim_mht_III false -1"/> -->
    
 </launch>
