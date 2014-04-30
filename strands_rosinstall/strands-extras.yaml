@@ -25,6 +25,11 @@
     uri: https://github.com/strands-project/strands_hri.git
     version: hydro-devel
 
+- git:
+    local-name: people
+    uri: https://github.com/strands-project/people.git
+    version: hydro-devel
+
 - git: 
    local-name: rosbridge_suite
    uri: 'https://github.com/strands-project/rosbridge_suite.git'
