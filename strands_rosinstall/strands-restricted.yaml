@@ -16,3 +16,8 @@
     uri: https://github.com/strands-project/v4r.git
     version: hydro-devel
 
+- git:
+    local-name: strands_tabletop_perception
+    uri: https://github.com/strands-project/strands_tabletop_perception.git
+    version: hydro-devel
+
