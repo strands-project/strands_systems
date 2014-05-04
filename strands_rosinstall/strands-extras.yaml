@@ -44,3 +44,8 @@
    local-name: strands_ui
    uri: 'https://github.com/strands-project/strands_ui.git'
    version: hydro-devel
+
+- git: 
+   local-name: strands_deployment
+   uri: 'https://github.com/strands-project/strands_deployment.git'
+   version: master
