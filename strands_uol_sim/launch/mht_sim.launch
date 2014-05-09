@@ -7,10 +7,6 @@
   <arg name="dataset" default="robolab"/>
   <env name="HOSTNAME" value="localhost"/>
 
-  <include file="$(find ros_datacentre)/launch/datacentre.launch">
-      <arg name="db_path" value="/opt/strands/strands_datacentre"/>
-  </include>
-
   <!-- Scitos robot -->
   <include file="$(find strands_morse)/launch/scitos.launch"/>
 
