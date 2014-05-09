@@ -1,0 +1,16 @@
+<launch>
+	<arg name="machine" default="localhost" />
+	<arg name="user" default="" />
+
+	<machine name="$(arg machine)" address="$(arg machine)" env-loader="/opt/strands/strands_catkin_ws/devel/env.sh" user="$(arg user)" default="true"/>
+
+	<!-- STRANDS Robot -->
+	<include file="$(find scitos_bringup)/launch/strands_robot.launch" >
+	    <arg name="machine"  value="$(arg machine)"/>
+	    <arg name="user"  value="$(arg machine)"/>
+	</include>
+
+
+	<node name="odometry_mileage" pkg="odometry_mileage" type="odometry_mileage"/>
+
+</launch>

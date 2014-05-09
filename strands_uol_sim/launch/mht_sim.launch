@@ -4,6 +4,8 @@
   <arg name="pos_y" default="-1.32365772104"/>
   <arg name="ori_z" default="-0.698060797088"/>
   <arg name="ori_w" default="0.716038493078"/>
+  <arg name="dataset" default="robolab"/>
+  <env name="HOSTNAME" value="localhost"/>
 
   <include file="$(find ros_datacentre)/launch/datacentre.launch">
       <arg name="db_path" value="/opt/strands/strands_datacentre"/>
@@ -13,6 +15,7 @@
   <include file="$(find strands_morse)/launch/scitos.launch"/>
 
   <node pkg="strands_morse" type="simulator.sh" respawn="false" name="strands_morse" output="screen" args="uol $(arg env).py"/>
+
   <include file="$(find scitos_docking)/launch/charging.launch" />
 
   <!-- 2D Navigation -->
@@ -21,14 +24,21 @@
   </include>
 
 
-  <include file="$(find ros_mary_tts)/launch/ros_mary.launch"/>
-     
+  <!-- <include file="$(find ros_mary_tts)/launch/ros_mary.launch"/> -->
+
+
   <node name="pose_initialiser" pkg="pose_initialiser" type="pose_initialiser.py" output="screen" args="$(arg pos_x) $(arg pos_y) $(arg ori_z) $(arg ori_w)"/>
 
+  <!-- 
+	<node name="ramp_climb" pkg="scitos_ramp_climb" type="ramp_climb" output="screen"/> 
+  -->
 
-  <!-- Long Term Patroller   -->   
-  <!-- <node name="nav_monitor" pkg="nav_monitor" type="nav_monitor.py" output="screen"/> -->
+  <include file="$(find monitored_navigation)/launch/monitored_nav.launch"/>
 
-  <!-- <node name="patroller" pkg="waypoint_patroller" type="long_term_patroller.py" output="screen" args="uol_sim_mht_III false -1"/> -->
-   
+  <include file="$(find topological_navigation)/launch/topological_navigation.launch">
+      <arg name="map" value="$(arg dataset)"/>
+  </include>
+
+  <node pkg="topological_utils" type="visualise_map.py" name="visualise_map" args="$(arg dataset)"/>
+
 </launch>
