@@ -35,6 +35,4 @@
       <arg name="map" value="$(arg dataset)"/>
   </include>
 
-  <node pkg="topological_utils" type="visualise_map.py" name="visualise_map" args="$(arg dataset)"/>
-
 </launch>
