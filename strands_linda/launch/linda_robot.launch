@@ -1,10 +1,11 @@
 <launch>
 	<arg name="machine" default="localhost" />
-	<arg name="user" default="" />
+	<arg name="user" default="strands" />
 	<arg name="laser" default="/dev/laser" />
 	<arg name="scitos_config" default="$(find scitos_mira)/resources/SCITOSDriver-with-udev.xml"/>
 	<arg name="with_mux" default="true" />
-
+	<arg name="chest_camera" default="true" />
+	<arg name="chest_ip" default="left-cortex" />
 
 	<machine name="$(arg machine)" address="$(arg machine)" env-loader="/opt/strands/strands_catkin_ws/devel/env.sh" user="$(arg user)" default="true"/>
 
@@ -15,6 +16,8 @@
 		<arg name="laser" value="$(arg laser)"/>
 		<arg name="scitos_config" value="$(arg scitos_config)"/>
 		<arg name="with_mux" value="$(arg with_mux)" />
+		<arg name="chest_camera" value="$(arg chest_camera) />
+		<arg name="chest_ip" value="$(arg chest_ip) />
 	</include>
 
 	<node name="odometry_mileage" pkg="odometry_mileage" type="odometry_mileage"/>
