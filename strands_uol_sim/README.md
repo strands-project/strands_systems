@@ -31,15 +31,14 @@ This package contains files that are necessary for running STRANDS simulations o
 2. Insert waypoints on database:
    * Launch strands_datacentre:
            ```
-           roslaunch strands_datacentre datacentre.launch
+           roslaunch ros_datacentre datacentre.launch
            
            ```
    * Insert waypoints in DB
            ```
-           rosrun waypoint_recorder insert_in_db.py /opt/strands/strands_catkin_ws/src/strands_morse/uol/maps/uol_mht_sim_III.csv
-           
+            rosrun topological_utils insert_map.py $(rospack find strands_uol_sim)/resources/mht.tpl robolab mht
            ```
-   NOTE: You can also create your own waypoints folowing the steps descripted in: https://github.com/strands-project/autonomous_patrolling
+   NOTE: You can also create your own topological map following the instructions on: https://github.com/strands-project/strands_navigation/tree/hydro-devel/topological_navigation
 
 ### Launching Autonomous Patrolling Simulation
 

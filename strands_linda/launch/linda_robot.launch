@@ -1,0 +1,20 @@
+<launch>
+	<arg name="machine" default="localhost" />
+	<arg name="user" default="" />
+	<arg name="laser" default="/dev/laser" />
+	<arg name="scitos_config" default="$(find scitos_mira)/resources/SCITOSDriver-with-udev.xml"/>
+
+
+	<machine name="$(arg machine)" address="$(arg machine)" env-loader="/opt/strands/strands_catkin_ws/devel/env.sh" user="$(arg user)" default="true"/>
+
+	<!-- STRANDS Robot -->
+	<include file="$(find scitos_bringup)/launch/strands_robot.launch" >
+	    <arg name="machine"  value="$(arg machine)"/>
+	    <arg name="user"  value="$(arg machine)"/>
+		<arg name="laser" value="$(arg laser)"/>
+		<arg name="scitos_config" value="$(arg scitos_config)"/>
+	</include>
+
+	<node name="odometry_mileage" pkg="odometry_mileage" type="odometry_mileage"/>
+
+</launch>
