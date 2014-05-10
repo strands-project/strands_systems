@@ -1,0 +1,23 @@
+<launch>
+	<arg name="machine" default="localhost" />
+	<arg name="user" default="strands" />
+	<arg name="chest_camera" default="true" />
+	<arg name="chest_ip" default="werner" />
+	<arg name="head_camera" default="true" />
+	<arg name="head_ip" default="werner2" />
+
+	<machine name="$(arg machine)" address="$(arg machine)" env-loader="/opt/strands/strands_catkin_ws/devel/env.sh" user="$(arg user)" default="true"/>
+
+	<!-- STRANDS Robot -->
+	<include file="$(find scitos_bringup)/launch/strands_robot.launch" >
+	    <arg name="machine"  value="$(arg machine)"/>
+	    <arg name="user"  value="$(arg user)"/>
+		<arg name="chest_camera" value="$(arg chest_camera)" />
+		<arg name="chest_ip" value="$(arg chest_ip)" />
+		<arg name="head_camera" value="$(arg head_camera)" />
+		<arg name="head_ip" value="$(arg head_ip)" />
+	</include>
+
+	<node name="odometry_mileage" pkg="odometry_mileage" type="odometry_mileage"/>
+
+</launch>
