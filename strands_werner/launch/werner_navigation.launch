@@ -24,4 +24,9 @@
 	    <arg name="with_mux" value="$(arg with_mux)" />
 	    <arg name="topological_map" value="$(arg topological_map)"/>
 	</include>
+
+	<node name="set_mary_voice" pkg="strands_hri_utils" type="set_voice.py"/>
+	<node name="gaze_at_pose" pkg="strands_gazing" type="gaze_at_pose"/>
+	<node name="pose_extractor" pkg="pose_extractor" type="extract_last_pose_from_path.py"/>
+	<node name="human_aware_navigation" pkg="strands_human_aware_navigation" type="human_aware_navigation.py"/>
 </launch>

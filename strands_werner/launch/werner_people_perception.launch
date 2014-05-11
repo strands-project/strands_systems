@@ -1,0 +1,12 @@
+<launch>
+	<arg name="machine" default="werner2" />
+	<arg name="user" default="strands" />
+
+	<machine name="$(arg machine)" address="$(arg machine)" env-loader="/opt/strands/strands_catkin_ws/devel/env.sh" user="$(arg user)" default="true"/>
+
+	<!-- STRANDS Robot -->
+	<include file="$(find strands_perception_people)/launch/pedestrian_tracker_robot.launch" >
+	    <arg name="machine"  value="$(arg machine)"/>
+	    <arg name="user"  value="$(arg user)"/>
+	</include>
+</launch>

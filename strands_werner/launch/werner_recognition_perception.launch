@@ -1,0 +1,20 @@
+<launch>
+	<arg name="machine" default="werner2" />
+	<arg name="user" default="strands" />
+
+	<machine name="$(arg machine)" address="$(arg machine)" env-loader="/opt/strands/strands_catkin_ws/devel/env.sh" user="$(arg user)" default="true"/>
+
+	<!-- recognition service -->
+	<include file="$(find singleview_object_recognizer)/launch/recognition_service.launch" >
+	    <arg name="machine" value="$(arg machine)"/>
+	    <arg name="user" value="$(arg user)"/>
+	    <arg name="models_dir" value="/home/strands/data/strands_object_models/full_models" />
+    	<arg name="training_dir_sift" value="/home/strands/data/strands_object_models/sift_trained" />
+    	<arg name="recognizer_structure_sift" value="/home/strands/data/strands_object_models/modelling_output/" />
+    	<arg name="chop_z" value="3.5" />
+	</include>
+
+	<!-- action server to check object for object presence -->
+    <node pkg="singleview_object_recognizer" type="checkObjectPresence" name="checkObjectPresence" output="screen" />
+
+</launch>
