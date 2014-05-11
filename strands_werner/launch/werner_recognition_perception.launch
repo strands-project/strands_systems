@@ -1,7 +1,8 @@
 <launch>
 	<arg name="machine" default="werner2" />
 	<arg name="user" default="strands" />
-
+	<arg name="camera_topic" default="/head_xtion/depth_registered/points" />
+	
 	<machine name="$(arg machine)" address="$(arg machine)" env-loader="/opt/strands/strands_catkin_ws/devel/env.sh" user="$(arg user)" default="true"/>
 
 	<!-- recognition service -->
@@ -11,10 +12,13 @@
 	    <arg name="models_dir" value="/home/strands/data/strands_object_models/full_models" />
     	<arg name="training_dir_sift" value="/home/strands/data/strands_object_models/sift_trained" />
     	<arg name="recognizer_structure_sift" value="/home/strands/data/strands_object_models/modelling_output/" />
-    	<arg name="chop_z" value="3.5" />
+    	<arg name="chop_z" value="2.5" />
+		<arg name="ignore_color" value="true"/>
 	</include>
 
 	<!-- action server to check object for object presence -->
-    <node pkg="singleview_object_recognizer" type="checkObjectPresence" name="checkObjectPresence" output="screen" />
+    <node pkg="singleview_object_recognizer" type="checkObjectPresence" name="checkObjectPresence" output="screen">
+		<param name="camera_topic" value="$(arg camera_topic)" type="string"/>
+    </node>
 
 </launch>
