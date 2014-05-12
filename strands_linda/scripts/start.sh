@@ -8,6 +8,7 @@ tmux new-window -t $SESSION:0 -n 'roscore'
 tmux new-window -t $SESSION:1 -n 'linda_core'
 tmux new-window -t $SESSION:2 -n 'linda_robot'
 tmux new-window -t $SESSION:3 -n 'linda_navigation'
+tmux new-window -t $SESSION:4 -n 'RViz'
 
 
 tmux select-window -t $SESSION:0
@@ -26,6 +27,9 @@ tmux send-keys "roslaunch strands_linda linda_robot.launch"
 
 tmux select-window -t $SESSION:3
 tmux send-keys "roslaunch strands_linda linda_navigation.launch"
+
+tmux select-window -t $SESSION:3
+tmux send-keys "rosrun rviz rviz"
 
 # Set default window
 tmux select-window -t $SESSION:0

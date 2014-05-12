@@ -1,6 +1,6 @@
 <launch>
-    <arg name="machine" default="left-cortex" />
-    <arg name="user" default="strands" />
+    <arg name="machine" default="localhost"/>
+    <arg name="user" default="" />
     <arg name="with_camera" default="true"/>
     <arg name="camera" default="chest_xtion"/>
     <arg name="map" default="/opt/strands/maps/WW_2014_Jan_19-cropped.yaml"/>
