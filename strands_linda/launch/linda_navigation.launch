@@ -3,11 +3,11 @@
 	<arg name="user" default="strands" />
     <arg name="with_camera" default="false"/>
     <arg name="camera" default="chest_xtion"/>
-    <arg name="map"/>
+    <arg name="map" default="/opt/strands/maps/WW_2014_Jan_19-cropped.yaml"/>
     <arg name="with_no_go_map" default="false"/>
     <arg name="no_go_map"/>
 	<arg name="with_mux" default="false" />
-	<arg name="topological_map"/>
+	<arg name="topological_map" default="WW_2014_Jan_19"/>
 
 
 	<machine name="$(arg machine)" address="$(arg machine)" env-loader="/opt/strands/strands_catkin_ws/devel/env.sh" user="$(arg user)" default="true"/>
