@@ -1,0 +1,9 @@
+<launch>
+	<arg name="machine" default="werner" />
+	<arg name="user" default="strands" />
+
+	<machine name="$(arg machine)" address="$(arg machine)" env-loader="/opt/strands/strands_catkin_ws/devel/env.sh" user="$(arg user)" default="true"/>
+
+	<include file="$(find strands_interaction_behaviours)/launch/idle.launch"/>
+
+</launch>

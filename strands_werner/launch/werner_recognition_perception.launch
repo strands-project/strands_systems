@@ -13,7 +13,6 @@
     	<arg name="training_dir_sift" value="/home/strands/data/strands_object_models/sift_trained" />
     	<arg name="recognizer_structure_sift" value="/home/strands/data/strands_object_models/modelling_output/" />
     	<arg name="chop_z" value="2.5" />
-		<arg name="ignore_color" value="true"/>
 	</include>
 
 	<!-- action server to check object for object presence -->
