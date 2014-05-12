@@ -1,6 +1,6 @@
 <launch>
     <!-- SCITOS no camera -->
-        <include file="$(find scitos_bringup)/launch/no_camera.launch"/>     
+    <include file="$(find scitos_bringup)/launch/no_camera.launch"/>     
 
     <!-- Additional nodes -->
 	<!--    <include file="$(find ros_datacentre)/launch/datacentre.launch">
