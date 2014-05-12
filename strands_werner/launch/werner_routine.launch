@@ -1,0 +1,19 @@
+<launch>
+	<arg name="machine" default="localhost" />
+	<arg name="user" default="" />
+
+	<machine name="$(arg machine)" address="$(arg machine)" env-loader="/opt/strands/strands_catkin_ws/devel/env.sh" user="$(arg user)" default="true"/>
+
+    <!--roslaunch task_executor task-scheduler.launch topological_map:=aaf_y1_topo-->
+	
+	<!-- Task scheduler -->
+	<include file="$(find task_executor)/launch/task-scheduler.launch" >
+	    <arg name="machine"  value="$(arg machine)"/>
+	    <arg name="user"  value="$(arg user)"/>
+	    <arg name="topological_map" value="aaf_y1_topo"/>
+	</include>
+	
+	<!-- Routine -->
+    <node pkg="care_scenario_y1" type="routine.py" name="care_scenario_routine" output="screen" />
+
+</launch>
