@@ -48,5 +48,10 @@
    local-name: ros_datacentre
    uri: 'https://github.com/strands-project/ros_datacentre.git'
    version: hydro-devel
-   
+
+# Systems
+- git: 
+   local-name: strands_systems
+   uri: 'https://github.com/strands-project/strands_systems.git'
+   version: hydro-devel
 
