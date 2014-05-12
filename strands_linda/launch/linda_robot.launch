@@ -4,10 +4,10 @@
     <arg name="laser" default="/dev/laser" />
     <arg name="scitos_config" default="$(find scitos_mira)/resources/SCITOSDriver-with-udev.xml"/>
     <arg name="with_mux" default="true" />
-    <arg name="chest_camera" default="false" />
-    <arg name="chest_ip" default="left-cortex" />
+    <arg name="chest_camera" default="true" />
+    <arg name="chest_ip" default="localhost" />
     <arg name="head_camera" default="true" />
-    <arg name="head_ip" default="localhost" />
+    <arg name="head_ip" default="left-cortex" />
 
     <machine name="$(arg machine)" address="$(arg machine)" env-loader="/opt/strands/strands_catkin_ws/devel/env.sh" user="$(arg user)" default="true"/>
 
