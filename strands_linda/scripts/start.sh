@@ -28,7 +28,7 @@ tmux send-keys "roslaunch strands_linda linda_robot.launch"
 tmux select-window -t $SESSION:3
 tmux send-keys "roslaunch strands_linda linda_navigation.launch"
 
-tmux select-window -t $SESSION:3
+tmux select-window -t $SESSION:4
 tmux send-keys "rosrun rviz rviz"
 
 # Set default window
