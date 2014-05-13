@@ -5,7 +5,7 @@
     <arg name="scitos_config" default="$(find scitos_mira)/resources/SCITOSDriver-with-udev.xml"/>
     <arg name="with_mux" default="true" />
     <arg name="chest_camera" default="true" />
-    <arg name="chest_ip" default="localhost" />
+    <arg name="chest_ip" default="right-cortex" />
     <arg name="head_camera" default="true" />
     <arg name="head_ip" default="left-cortex" />
 
