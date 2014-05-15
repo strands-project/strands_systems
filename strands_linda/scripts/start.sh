@@ -8,7 +8,11 @@ tmux new-window -t $SESSION:0 -n 'roscore'
 tmux new-window -t $SESSION:1 -n 'linda_core'
 tmux new-window -t $SESSION:2 -n 'linda_robot'
 tmux new-window -t $SESSION:3 -n 'linda_navigation'
-tmux new-window -t $SESSION:4 -n 'RViz'
+tmux new-window -t $SESSION:4 -n 'linda_object_perception'
+tmux new-window -t $SESSION:5 -n 'linda_people_perception'
+tmux new-window -t $SESSION:6 -n 'linda_hri'
+tmux new-window -t $SESSION:7 -n 'linda_routine'
+tmux new-window -t $SESSION:8 -n 'RViz'
 
 
 tmux select-window -t $SESSION:0
@@ -29,6 +33,18 @@ tmux select-window -t $SESSION:3
 tmux send-keys "roslaunch strands_linda linda_navigation.launch"
 
 tmux select-window -t $SESSION:4
+tmux send-keys "roslaunch strands_linda linda_object_perception.launch"
+
+tmux select-window -t $SESSION:5
+tmux send-keys "roslaunch strands_linda linda_people_perception.launch"
+
+tmux select-window -t $SESSION:6
+tmux send-keys "roslaunch strands_linda linda_hri.launch"
+
+tmux select-window -t $SESSION:7
+tmux send-keys "roslaunch strands_linda linda_routine.launch"
+
+tmux select-window -t $SESSION:8
 tmux send-keys "rosrun rviz rviz"
 
 # Set default window

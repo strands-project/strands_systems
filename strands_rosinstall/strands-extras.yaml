@@ -49,3 +49,8 @@
    local-name: strands_deployment
    uri: 'https://github.com/strands-project/strands_deployment.git'
    version: master
+
+- git:
+    local-name: activity_analysis
+    uri: https://github.com/strands-project/activity_analysis.git
+    version: hydro-devel
