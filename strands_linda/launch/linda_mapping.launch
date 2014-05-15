@@ -1,0 +1,14 @@
+<launch>
+    <arg name="machine" default="localhost"/>
+    <arg name="user" default="" />
+    <arg name="map" default="/opt/strands/maps/last_map.yaml"/>
+
+    <machine name="$(arg machine)" address="$(arg machine)" env-loader="/opt/strands/strands_catkin_ws/devel/env.sh" user="$(arg user)" default="true"/>
+
+    <!-- STRANDS navigation -->
+    <include file="$(find map_saver)/launch/ap_map_saver.launch" >
+        <arg name="machine"  value="$(arg machine)"/>
+        <arg name="user"  value="$(arg user)"/>
+        <arg name="map" value="$(arg map)" />
+    </include>
+</launch>
