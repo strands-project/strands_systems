@@ -1,7 +1,10 @@
 <launch>
     <arg name="machine" default="localhost" />
-    <arg name="user" default="" />
+    <arg name="user" default="strands" />
     <arg name="map" default="/opt/strands/maps/empty.yaml"/>
+    <arg name="camera" default="chest_xtion"/>
+    <arg name="camera_ip" default="right-cortex"/>
+
 	<arg name="delta" default="0.05"/>
 	<arg name="xmin" default="-30.0"/>
 	<arg name="ymin" default="-30.0"/>
@@ -24,10 +27,13 @@
     </node>
 
     <!-- launch move base -->
-    <include file="$(find scitos_2d_navigation)/launch/move_base.launch" >
-        <arg name="machine"  value="$(arg machine)"/>
+    <include file="$(find scitos_2d_navigation)/launch/move_base_3d.launch">
+        <arg name="camera" value="$(arg camera)"/>
+        <arg name="machine"  value="$(arg camera_ip)"/>
         <arg name="user"  value="$(arg user)"/>
         <remap from="/cmd_vel" to="/cmd_vel_mux/navigation"/>
     </include>
+
+
 
 </launch>
