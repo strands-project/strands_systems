@@ -1,0 +1,12 @@
+<launch>
+	<arg name="machine" default="localhost" />
+	<arg name="user" default="strands" />
+
+	<machine name="$(arg machine)" address="$(arg machine)" env-loader="/opt/strands/strands_catkin_ws/devel/env.sh" user="$(arg user)" default="true"/>
+
+	<node name="gaze_at_pose" pkg="strands_gazing" type="gaze_at_pose"/>
+	<node name="gaze_switch" pkg="strands_hri_utils" type="gaze_switch.py"/>
+    	<include file="$(find strands_hri_launch)/launch/speech.launch"/>
+	<node name="webserver" pkg="strands_hri_utils" type="webserver.py"/>
+
+</launch>
