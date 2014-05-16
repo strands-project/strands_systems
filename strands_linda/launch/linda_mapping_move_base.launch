@@ -1,28 +1,18 @@
 <launch>
     <arg name="machine" default="localhost" />
     <arg name="user" default="" />
-    <arg name="map" default="/opt/strands/maps/last_map.yaml"/>
+    <arg name="map" default="/opt/strands/maps/empty.yaml"/>
 
-	<machine name="$(arg machine)" address="$(arg machine)" env-loader="/opt/strands/strands_catkin_ws/devel/env.sh" user="$(arg user)" default="true"/>
-
-    <!-- lanch map server -->
-    <node name="map_server" pkg="map_server" type="map_server" args="$(arg map)"/>
+    <machine name="$(arg machine)" address="$(arg machine)" env-loader="/opt/strands/strands_catkin_ws/devel/env.sh" user="$(arg user)" default="true"/>
 
     <node name="no_go_map_server" pkg="map_server" type="map_server" args="$(arg map)">
         <remap from="/map" to="/no_go_map"/>
     </node>
-
-    <!-- launch AMCL 
-    <include file="$(find scitos_2d_navigation)/launch/amcl.launch">
-        <arg name="machine"  value="$(arg machine)"/>
-        <arg name="user"  value="$(arg user)"/>
-    </include> -->
 
     <!-- launch move base -->
     <include file="$(find scitos_2d_navigation)/launch/move_base.launch" >
         <arg name="machine"  value="$(arg machine)"/>
         <arg name="user"  value="$(arg user)"/>
     </include>
-
 
 </launch>
