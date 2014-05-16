@@ -31,7 +31,6 @@
         <arg name="camera" value="$(arg camera)"/>
         <arg name="machine"  value="$(arg camera_ip)"/>
         <arg name="user"  value="$(arg user)"/>
-        <remap from="/cmd_vel" to="/cmd_vel_mux/navigation"/>
     </include>
 
 
