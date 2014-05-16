@@ -5,16 +5,18 @@
 
 	<machine name="$(arg machine)" address="$(arg machine)" env-loader="/opt/strands/strands_catkin_ws/devel/env.sh" user="$(arg user)" default="true"/>
 
-
-
     <!-- lanch map server -->
     <node name="map_server" pkg="map_server" type="map_server" args="$(arg map)"/>
 
-    <!-- launch AMCL -->
+    <node name="no_go_map_server" pkg="map_server" type="map_server" args="$(arg map)">
+        <remap from="/map" to="/no_go_map"/>
+    </node>
+
+    <!-- launch AMCL 
     <include file="$(find scitos_2d_navigation)/launch/amcl.launch">
         <arg name="machine"  value="$(arg machine)"/>
         <arg name="user"  value="$(arg user)"/>
-    </include>
+    </include> -->
 
     <!-- launch move base -->
     <include file="$(find scitos_2d_navigation)/launch/move_base.launch" >
