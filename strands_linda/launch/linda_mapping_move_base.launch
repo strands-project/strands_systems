@@ -2,8 +2,22 @@
     <arg name="machine" default="localhost" />
     <arg name="user" default="" />
     <arg name="map" default="/opt/strands/maps/empty.yaml"/>
+	<arg name="delta" default="0.05"/>
+	<arg name="xmin" default="-30.0"/>
+	<arg name="ymin" default="-30.0"/>
+	<arg name="xmax" default="30.0"/>
+	<arg name="ymax" default="30.0"/>
 
     <machine name="$(arg machine)" address="$(arg machine)" env-loader="/opt/strands/strands_catkin_ws/devel/env.sh" user="$(arg user)" default="true"/>
+
+
+	<node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" >
+		<param name="xmin" value="$(arg xmin)"/>
+		<param name="ymin" value="$(arg ymin)"/>
+		<param name="xmax" value="$(arg xmax)"/>
+		<param name="ymax" value="$(arg ymax)"/>
+		<param name="delta" value="$(arg delta)"/>
+	</node>
 
     <node name="no_go_map_server" pkg="map_server" type="map_server" args="$(arg map)">
         <remap from="/map" to="/no_go_map"/>
