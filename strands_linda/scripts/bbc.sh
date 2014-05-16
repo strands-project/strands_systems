@@ -7,8 +7,10 @@ tmux -2 new-session -d -s $SESSION
 tmux new-window -t $SESSION:0 -n 'roscore'
 tmux new-window -t $SESSION:1 -n 'linda_core'
 tmux new-window -t $SESSION:2 -n 'linda_robot'
-tmux new-window -t $SESSION:3 -n 'linda_people_perception'
-tmux new-window -t $SESSION:4 -n 'linda_bbc'
+tmux new-window -t $SESSION:3 -n 'linda_mapping'
+tmux new-window -t $SESSION:4 -n 'linda_mapping_move_base'
+tmux new-window -t $SESSION:5 -n 'linda_people_perception'
+tmux new-window -t $SESSION:6 -n 'linda_bbc'
 
 tmux select-window -t $SESSION:0
 tmux split-window -v
@@ -25,9 +27,15 @@ tmux select-window -t $SESSION:2
 tmux send-keys "roslaunch strands_linda linda_robot.launch"
 
 tmux select-window -t $SESSION:3
-tmux send-keys "roslaunch strands_linda linda_people_perception.launch"
+tmux send-keys "roslaunch strands_linda linda_mapping.launch"
 
 tmux select-window -t $SESSION:4
+tmux send-keys "roslaunch strands_linda linda_mapping_move_base.launch"
+
+tmux select-window -t $SESSION:5
+tmux send-keys "roslaunch strands_linda linda_people_perception.launch"
+
+tmux select-window -t $SESSION:6
 tmux send-keys "roslaunch strands_linda linda_bbc.launch"
 
 # Set default window
