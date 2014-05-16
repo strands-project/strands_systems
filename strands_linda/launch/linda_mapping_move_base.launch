@@ -4,6 +4,7 @@
     <arg name="map" default="/opt/strands/maps/empty.yaml"/>
     <arg name="camera" default="chest_xtion"/>
     <arg name="camera_ip" default="right-cortex"/>
+    <arg name="with_mux" default="true" />
 
 	<arg name="delta" default="0.05"/>
 	<arg name="xmin" default="-30.0"/>
@@ -31,8 +32,7 @@
         <arg name="camera" value="$(arg camera)"/>
         <arg name="machine"  value="$(arg camera_ip)"/>
         <arg name="user"  value="$(arg user)"/>
+        <arg name="with_mux" value="$(arg with_mux)"/>
     </include>
-
-
 
 </launch>
