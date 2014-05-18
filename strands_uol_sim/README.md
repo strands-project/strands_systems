@@ -9,7 +9,7 @@ This package contains files that are necessary for running STRANDS simulations o
 1. Calibrate charging station parameters:
    * Launch strands_datacentre:
            ```
-           roslaunch strands_datacentre datacentre.launch
+           roslaunch ros_datacentre datacentre.launch
            
            ```
    * Launch UOL_MHT simulation:
