@@ -34,7 +34,7 @@ tmux select-window -t $SESSION:4
 tmux send-keys "roslaunch strands_linda linda_people_perception.launch"
 
 tmux select-window -t $SESSION:5
-tmux send-keys "roslaunch nhm nhm.launch"
+tmux send-keys "roslaunch nhm nhm.launch dialogue_option:=nhm behaviour:=test2"
 
 tmux select-window -t $SESSION:6
 tmux send-keys "rosrun rviz rviz"
