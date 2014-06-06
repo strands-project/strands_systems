@@ -13,6 +13,7 @@
     <node pkg="strands_webserver" type="strands_webserver" name="strands_webserver" output="screen">
       <param name="host_ip" value="$(optenv HOST_IP 127.0.0.1)" />
     </node>
+    <node name="mjpeg_server" pkg="mjpeg_server" type="mjpeg_server"/>
     
     <!-- launch Webtools -->
     <node name="throttle_image" pkg="topic_tools" type="throttle" args="messages /pedestrian_tracking/image 0.3 /webthrottle/head/image" />
