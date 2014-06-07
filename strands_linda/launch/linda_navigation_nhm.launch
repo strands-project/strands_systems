@@ -28,7 +28,10 @@
     </include>
   
     <!--- Monitored Navigation -->
-    <node name="nav_help_speech" pkg="nhm" type="nav_help_speech.py" output="screen"/>
+    <include file="$(find nhm)/launch/help_speech.launch">
+        <arg name="machine"  value="$(arg machine)"/>
+        <arg name="user"  value="$(arg user)"/>
+    </include>
     <include file="$(find monitored_navigation)/launch/monitored_nav.launch">
         <arg name="machine"  value="$(arg machine)"/>
         <arg name="user"  value="$(arg user)"/>
@@ -43,7 +46,9 @@
         <arg name="map" value="$(arg topological_map)"/>
     </include>
 
-	<node name="gaze_at_pose" pkg="strands_gazing" type="gaze_at_pose"/>
-	<node name="pose_extractor" pkg="pose_extractor" type="extract_last_pose_from_path.py"/>
-	<node name="human_aware_navigation" pkg="strands_human_aware_navigation" type="human_aware_navigation.py"/>
+    <!--- Human Aware Navigation -->
+	<include file="$(find strands_hri)/launch/human_aware_navigation.launch">
+        <arg name="machine"  value="$(arg machine)"/>
+        <arg name="user"  value="$(arg user)"/>
+    </include>
 </launch>
