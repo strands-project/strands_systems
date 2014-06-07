@@ -28,6 +28,7 @@
     </include>
   
     <!--- Monitored Navigation -->
+    <node name="nav_help_speech" pkg="nhm" type="nav_help_speech.py" output="screen"/>
     <include file="$(find monitored_navigation)/launch/monitored_nav.launch">
         <arg name="machine"  value="$(arg machine)"/>
         <arg name="user"  value="$(arg user)"/>
