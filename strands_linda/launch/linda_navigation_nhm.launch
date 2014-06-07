@@ -47,7 +47,7 @@
     </include>
 
     <!--- Human Aware Navigation -->
-	<include file="$(find strands_hri)/launch/human_aware_navigation.launch">
+	<include file="$(find strands_hri_launch)/launch/human_aware_navigation.launch">
         <arg name="machine"  value="$(arg machine)"/>
         <arg name="user"  value="$(arg user)"/>
     </include>
