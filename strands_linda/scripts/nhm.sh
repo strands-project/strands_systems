@@ -10,8 +10,9 @@ tmux new-window -t $SESSION:2 -n 'linda_robot'
 tmux new-window -t $SESSION:3 -n 'linda_navigation_nhm'
 tmux new-window -t $SESSION:4 -n 'linda_interfaces'
 tmux new-window -t $SESSION:5 -n 'linda_people_perception'
-tmux new-window -t $SESSION:6 -n 'nhm'
-tmux new-window -t $SESSION:7 -n 'RViz'
+tmux new-window -t $SESSION:6 -n 'patrol'
+tmux new-window -t $SESSION:7 -n 'nhm'
+tmux new-window -t $SESSION:8 -n 'RViz'
 
 
 tmux select-window -t $SESSION:0
@@ -38,9 +39,12 @@ tmux select-window -t $SESSION:5
 tmux send-keys "roslaunch strands_linda linda_people_perception.launch"
 
 tmux select-window -t $SESSION:6
-tmux send-keys "roslaunch nhm nhm.launch dialogue_option:=nhm behaviour:=test2"
+tmux send-keys "roslaunch topological_patroller patrol.launch"
 
 tmux select-window -t $SESSION:7
+tmux send-keys "roslaunch nhm nhm.launch dialogue_option:=nhm behaviour:=test2"
+
+tmux select-window -t $SESSION:8
 tmux send-keys "rosrun rviz rviz"
 
 # Set default window
