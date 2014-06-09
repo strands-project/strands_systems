@@ -4,11 +4,11 @@
     <arg name="with_camera" default="true"/>
     <arg name="camera" default="chest_xtion"/>
     <arg name="camera_ip" default="right-cortex"/>
-    <arg name="map" default="/opt/strands/maps/WW_2014_Jan_19-cropped.yaml"/>
+    <arg name="map" default="/opt/strands/maps/nhm-main.yaml"/>
     <arg name="with_no_go_map" default="false"/>
     <arg name="no_go_map" default=""/>
     <arg name="with_mux" default="true" />
-    <arg name="topological_map" default="WW_2014_Jan_19"/>
+    <arg name="topological_map" default="nhm1"/>
     <arg name="human_help" default="false" />
 
 
