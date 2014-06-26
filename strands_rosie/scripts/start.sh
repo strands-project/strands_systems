@@ -6,7 +6,7 @@ tmux -2 new-session -d -s $SESSION
 # Setup a window for tailing log files
 tmux new-window -t $SESSION:0 -n 'roscore'
 tmux new-window -t $SESSION:1 -n 'rosie_core'
-tmux new-window -t $SESSION:2 -n 'linda_robot'
+tmux new-window -t $SESSION:2 -n 'rosie_robot'
 tmux new-window -t $SESSION:3 -n 'linda_navigation'
 tmux new-window -t $SESSION:4 -n 'linda_object_perception'
 tmux new-window -t $SESSION:5 -n 'linda_people_perception'
@@ -24,10 +24,10 @@ tmux select-pane -t 1
 tmux send-keys "htop" C-m
 
 tmux select-window -t $SESSION:1
-tmux send-keys "roslaunch strands_linda linda_core.launch"
+tmux send-keys "roslaunch strands_rosie rosie_core.launch"
 
 tmux select-window -t $SESSION:2
-tmux send-keys "roslaunch strands_linda linda_robot.launch"
+tmux send-keys "roslaunch strands_rosie rosie_robot.launch"
 
 tmux select-window -t $SESSION:3
 tmux send-keys "roslaunch strands_linda linda_navigation.launch"
