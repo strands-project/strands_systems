@@ -4,10 +4,10 @@
 
     <machine name="$(arg machine)" address="$(arg machine)" env-loader="/opt/strands/strands_catkin_ws/devel/env.sh" user="$(arg user)" default="true"/>
 
-    <env name="HOSTNAME" value="$(arg machine)">
+    <env name="HOSTNAME" value="$(arg machine)"/>
 
     <!-- STRANDS Core -->
-    <include file="$(find scitos_bringup)/launch/strands_core.launch" >
+    <include file="$(find scitos_rosie)/launch/rosie_datacentre.launch" >
         <arg name="machine"  value="$(arg machine)"/>
         <arg name="user"  value="$(arg user)"/>
     </include>
