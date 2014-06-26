@@ -1,0 +1,14 @@
+<launch>
+    <arg name="machine" default="scitosstrands" />
+    <arg name="user" default="" />
+
+    <machine name="$(arg machine)" address="$(arg machine)" env-loader="/opt/strands/strands_catkin_ws/devel/env.sh" user="$(arg user)" default="true"/>
+
+    <env name="HOSTNAME" value="$(arg machine)">
+
+    <!-- STRANDS Core -->
+    <include file="$(find scitos_bringup)/launch/strands_core.launch" >
+        <arg name="machine"  value="$(arg machine)"/>
+        <arg name="user"  value="$(arg user)"/>
+    </include>
+</launch>
