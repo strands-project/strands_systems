@@ -43,7 +43,7 @@ tmux select-window -t $SESSION:6
 tmux send-keys "roslaunch strands_linda linda_hri.launch"
 
 tmux select-window -t $SESSION:7
-tmux send-keys "roslaunch task_executor task-scheduler.launch map:=y1tp2"
+tmux send-keys "roslaunch task_executor task-scheduler.launch topological_map:=y1tp2"
 
 tmux select-window -t $SESSION:8
 tmux send-keys "roslaunch kth_scenario_y1 routine.launch"
