@@ -14,6 +14,8 @@ tmux new-window -t $SESSION:6 -n 'rosie_hri'
 tmux new-window -t $SESSION:7 -n 'rosie_scheduler'
 tmux new-window -t $SESSION:8 -n 'rosie_routine'
 tmux new-window -t $SESSION:9 -n 'RViz'
+tmux new-window -t $SESSION:10 -n 'rosie_metric_mapping'
+
 
 
 tmux select-window -t $SESSION:0
