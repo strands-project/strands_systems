@@ -1,9 +1,20 @@
 <launch>
     <arg name="machine" default="localhost"/>
     <arg name="user" default="" />
+    <arg name="with_mux" default="true" />
     <arg name="map" default="/opt/strands/maps/last_map.yaml"/>
 
     <machine name="$(arg machine)" address="$(arg machine)" env-loader="/opt/strands/strands_catkin_ws/devel/env.sh" user="$(arg user)" default="true"/>
+
+	<!--- Docking -->
+    <include unless="$(arg with_mux)" file="$(find scitos_docking)/launch/charging.launch">
+	<arg name="machine" value="$(arg machine)"/>
+	<arg name="user" value="$(arg user)"/>
+    </include>
+    <include if="$(arg with_mux)" file="$(find scitos_docking)/launch/charging_mux.launch">
+	<arg name="machine" value="$(arg machine)"/>
+	<arg name="user" value="$(arg user)"/>
+    </include>
 
     <!-- STRANDS navigation -->
     <include file="$(find map_saver)/launch/ap_map_saver.launch" >

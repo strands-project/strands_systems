@@ -30,7 +30,7 @@ tmux select-window -t $SESSION:2
 tmux send-keys "roslaunch strands_linda linda_robot_nhm.launch"
 
 tmux select-window -t $SESSION:3
-tmux send-keys "roslaunch strands_linda linda_navigation_nhm.launch topological_map:=nhm-main"
+tmux send-keys "roslaunch strands_linda linda_navigation_nhm.launch topological_map:=nhm_main2"
 
 tmux select-window -t $SESSION:4
 tmux send-keys "roslaunch strands_linda linda_interfaces.launch"

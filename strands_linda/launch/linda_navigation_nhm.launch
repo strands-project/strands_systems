@@ -1,12 +1,12 @@
 <launch>
     <arg name="machine" default="localhost"/>
     <arg name="user" default="strands" />
-    <arg name="with_camera" default="true"/>
+    <arg name="with_camera" default="false"/>
     <arg name="camera" default="chest_xtion"/>
     <arg name="camera_ip" default="right-cortex"/>
     <arg name="map" default="/opt/strands/maps/nhm-main.yaml"/>
-    <arg name="with_no_go_map" default="false"/>
-    <arg name="no_go_map" default=""/>
+    <arg name="with_no_go_map" default="true"/>
+    <arg name="no_go_map" default="/opt/strands/maps/nhm-nogo.yaml"/>
     <arg name="with_mux" default="true" />
     <arg name="topological_map" default="nhm1"/>
     <arg name="human_help" default="false" />
