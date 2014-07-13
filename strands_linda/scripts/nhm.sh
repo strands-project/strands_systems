@@ -7,12 +7,12 @@ tmux -2 new-session -d -s $SESSION
 tmux new-window -t $SESSION:0 -n 'roscore'
 tmux new-window -t $SESSION:1 -n 'linda_core'
 tmux new-window -t $SESSION:2 -n 'linda_robot'
-tmux new-window -t $SESSION:3 -n 'linda_navigation'
-tmux new-window -t $SESSION:4 -n 'linda_people_perception'
-tmux new-window -t $SESSION:5 -n 'linda_hri'
-tmux new-window -t $SESSION:6 -n 'linda_routine'
-tmux new-window -t $SESSION:7 -n 'patrol_tasks'
-tmux new-window -t $SESSION:8 -n 'RViz'
+tmux new-window -t $SESSION:3 -n 'linda_navigation_nhm'
+tmux new-window -t $SESSION:4 -n 'linda_interfaces'
+tmux new-window -t $SESSION:5 -n 'linda_people_perception'
+tmux new-window -t $SESSION:6 -n 'patrol'
+tmux new-window -t $SESSION:7 -n 'Rviz'
+tmux new-window -t $SESSION:8 -n 'nhm'
 
 
 tmux select-window -t $SESSION:0
@@ -27,25 +27,25 @@ tmux select-window -t $SESSION:1
 tmux send-keys "roslaunch strands_linda linda_core.launch"
 
 tmux select-window -t $SESSION:2
-tmux send-keys "roslaunch strands_linda linda_robot.launch"
+tmux send-keys "roslaunch strands_linda linda_robot_nhm.launch"
 
 tmux select-window -t $SESSION:3
-tmux send-keys "roslaunch strands_linda linda_navigation.launch"
+tmux send-keys "roslaunch strands_linda linda_navigation_nhm.launch topological_map:=nhm_main2"
 
 tmux select-window -t $SESSION:4
-tmux send-keys "roslaunch strands_linda linda_people_perception.launch"
+tmux send-keys "roslaunch strands_linda linda_interfaces.launch"
 
 tmux select-window -t $SESSION:5
-tmux send-keys "roslaunch strands_linda linda_hri.launch"
+tmux send-keys "roslaunch strands_linda linda_people_perception.launch"
 
 tmux select-window -t $SESSION:6
-tmux send-keys "roslaunch strands_linda linda_patrol_tasks.launch"
+tmux send-keys "roslaunch topological_patroller patrol.launch"
 
 tmux select-window -t $SESSION:7
-tmux send-keys "roslaunch strands_linda patrol_routines.launch"
+tmux send-keys "rosrun rviz rviz"
 
 tmux select-window -t $SESSION:8
-tmux send-keys "rosrun rviz rviz"
+tmux send-keys "roslaunch nhm nhm.launch dialogue_option:=nhm behaviour:=nhm"
 
 # Set default window
 tmux select-window -t $SESSION:0

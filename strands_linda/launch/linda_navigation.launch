@@ -4,11 +4,11 @@
     <arg name="with_camera" default="true"/>
     <arg name="camera" default="chest_xtion"/>
     <arg name="camera_ip" default="right-cortex"/>
-    <arg name="map" default="/opt/strands/maps/WW_2014_Jan_19-cropped.yaml"/>
-    <arg name="with_no_go_map" default="false"/>
-    <arg name="no_go_map" default=""/>
+    <arg name="map" default="/opt/strands/maps/WW_2014_06_18-cropped.yaml"/>
+    <arg name="with_no_go_map" default="true"/>
+    <arg name="no_go_map" default="/opt/strands/maps/WW_2014_06_18-nogo.yaml"/>
     <arg name="with_mux" default="true" />
-    <arg name="topological_map" default="WW_2014_Jan_19"/>
+    <arg name="topological_map" default="WW_2014_06_18"/>
 
 
     <machine name="$(arg machine)" address="$(arg machine)" env-loader="/opt/strands/strands_catkin_ws/devel/env.sh" user="$(arg user)" default="true"/>
