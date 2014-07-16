@@ -49,3 +49,9 @@
    uri: 'https://github.com/strands-project/ros_datacentre.git'
    version: hydro-devel
 
+# Openni driver
+- git:
+    local-name: openni_wrapper
+    uri: https://github.com/strands-project/openni_wrapper.git
+    version: hydro-devel
+
