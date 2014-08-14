@@ -45,8 +45,8 @@
     version: hydro-devel
 
 - git: 
-   local-name: ros_datacentre
-   uri: 'https://github.com/strands-project/ros_datacentre.git'
+   local-name: mongodb_store
+   uri: 'https://github.com/strands-project/mongodb_store.git'
    version: hydro-devel
 
 # Openni driver
