@@ -9,6 +9,11 @@
     uri: https://github.com/strands-project/strands_utils.git
     version: hydro-devel
 
+- git:
+    local-name: strands_apps
+    uri: https://github.com/strands-project/strands_apps.git
+    version: hydro-devel
+
 # Interfaces
 - git:
     local-name: strands_webtools
