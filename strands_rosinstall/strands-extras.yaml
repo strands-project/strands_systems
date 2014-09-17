@@ -28,7 +28,7 @@
 - git: 
    local-name: twitter_bootstrap
    uri: 'https://github.com/strands-project/twitter_bootstrap.git'
-   version: hydro-devel
+   version: master
 
 - git:
     local-name: strands_hri
