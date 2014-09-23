@@ -26,7 +26,7 @@
   <node name="pose_initialiser" pkg="pose_initialiser" type="pose_initialiser.py" output="screen" args="$(arg pos_x) $(arg pos_y) $(arg ori_z) $(arg ori_w)"/>
 
   <!-- 
-	<node name="ramp_climb" pkg="scitos_ramp_climb" type="ramp_climb" output="screen"/> 
+	<node name="ramp_climb" pkg="ramp_climb" type="ramp_climb" output="screen"/> 
   -->
 
   <include file="$(find monitored_navigation)/launch/monitored_nav.launch"/>
