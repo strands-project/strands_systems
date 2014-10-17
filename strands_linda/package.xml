@@ -46,6 +46,7 @@
   <run_depend>ros_mary_tts</run_depend>
   <run_depend>scitos_teleop</run_depend>
   <run_depend>strands_webtools</run_depend>
+  <run_depend>strands_movebase</run_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->
