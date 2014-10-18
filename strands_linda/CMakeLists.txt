@@ -4,7 +4,7 @@ project(strands_linda)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS ros_mary_tts scitos_teleop strands_webtools)
+find_package(catkin REQUIRED COMPONENTS mary_tts scitos_teleop strands_webtools)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -50,7 +50,7 @@ find_package(catkin REQUIRED COMPONENTS ros_mary_tts scitos_teleop strands_webto
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES strands_linda
-#  CATKIN_DEPENDS ros_mary_tts scitos_launch scitos_teleop scitos_webtools
+#  CATKIN_DEPENDS mary_tts scitos_launch scitos_teleop scitos_webtools
 #  DEPENDS system_lib
 )
 

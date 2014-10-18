@@ -15,6 +15,6 @@
         <include file="$(find scitos_ptu_sweep)/launch/ptu_sweep.launch"/>
         <include file="$(find ramp_climb)/launch/rampclimbing_mux.launch"/>
         <include file="$(find strands_webtools)/launch/webtools_robot.launch"/>
-        <include file="$(find ros_mary_tts)/launch/ros_mary.launch" /> 
+        <include file="$(find mary_tts)/launch/ros_mary.launch" /> 
 
 </launch>
