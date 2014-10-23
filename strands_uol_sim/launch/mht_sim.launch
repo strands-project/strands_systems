@@ -20,7 +20,7 @@
   </include>
 
 
-  <!-- <include file="$(find ros_mary_tts)/launch/ros_mary.launch"/> -->
+  <!-- <include file="$(find mary_tts)/launch/ros_mary.launch"/> -->
 
 
   <node name="pose_initialiser" pkg="pose_initialiser" type="pose_initialiser.py" output="screen" args="$(arg pos_x) $(arg pos_y) $(arg ori_z) $(arg ori_w)"/>

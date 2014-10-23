@@ -5,7 +5,7 @@
     <machine name="$(arg machine)" address="$(arg machine)" env-loader="/opt/strands/strands_catkin_ws/devel/env.sh" user="$(arg user)" default="true"/>
 
     <!-- launch Mary -->
-    <include file="$(find ros_mary_tts)/launch/ros_mary.launch"/>
+    <include file="$(find mary_tts)/launch/ros_mary.launch"/>
     
     <!-- launch Webserver -->
     <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
