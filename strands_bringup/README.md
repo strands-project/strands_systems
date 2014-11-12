@@ -1,15 +1,25 @@
-# The strands launch files are divided in different levels one per level:
+# The strands launch files 
 
-* strands_core is a level which can be used to launch every system that has to run in the robot before actually starting the robot hardware.
+The strands launch files are divided in different levels one per level:
 
-* strands_robot launches the hardware of the robot is started
+* [strands_core](Launching-strands_core) is a level which can be used to launch every system that has to run in the robot before actually starting the robot hardware.
 
-* strands_navigation launches the navigation system
+* [strands_robot](Launching-strands_robot) launches the hardware of the robot is started
 
+* [strands_navigation](Launching-strands_navigation) launches the navigation system
 
-To use the strands launch files you can create launch files for each of this level calling the launch files and setting the needed parameters some examples are as following
+Every launch file has a `machine` tag to enable it for remote launching you can set this functionality by setting the `machine` and `user` arguments on your launch files. For remote launching you will also nee to set the following environment variables on all the pcs running the system:
+
+``` bash
+export ROS_MASTER_URI=http://main_pc:11311
+export ROS_ENV_LOADER=/opt/ros/hydro/env.sh
+```
+where **main_pc** is the ip of the computer running `roscore`
+
+To use the strands launch files you can create launch files for each of this level calling the launch files and setting the needed parameters some as following:
 
 ## Launching strands_core
+
 
 Example file:
 
