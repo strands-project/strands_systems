@@ -4,7 +4,7 @@
 
 	<arg name="head_camera" default="false" />
 	<arg name="head_ip" default="localhost" />
-	<arg name="head_user" default="strands" />
+	<arg name="head_user" default="" />
 
 	<arg name="chest_camera" default="false" />
 	<arg name="chest_ip" default="localhost" />
