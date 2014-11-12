@@ -14,6 +14,8 @@ tmux new-window -t $SESSION:6 -n 'rosie_hri'
 tmux new-window -t $SESSION:7 -n 'rosie_scheduler'
 tmux new-window -t $SESSION:8 -n 'rosie_routine'
 tmux new-window -t $SESSION:9 -n 'RViz'
+tmux new-window -t $SESSION:10 -n 'rosie_metric_mapping'
+
 
 
 tmux select-window -t $SESSION:0
@@ -45,13 +47,17 @@ tmux select-window -t $SESSION:6
 tmux send-keys "roslaunch strands_interaction_behaviours idle.launch"
 
 tmux select-window -t $SESSION:7
-tmux send-keys "roslaunch task_executor task-scheduler.launch map:=y1tp2"
+tmux send-keys "roslaunch task_executor task-scheduler.launch topological_map:=y1tp2"
 
 tmux select-window -t $SESSION:8
 tmux send-keys "roslaunch kth_scenario_y1 routine.launch"
 
 tmux select-window -t $SESSION:9
 tmux send-keys "rosrun rviz rviz"
+
+tmux select-window -t $SESSION:10
+tmux send-keys "ssh strands-sidekick" C-m
+tmux send-keys "roslaunch strands_rosie rosie_metric_mapping.launch"
 
 # Set default window
 tmux select-window -t $SESSION:0

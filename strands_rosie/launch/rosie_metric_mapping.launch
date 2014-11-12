@@ -1,0 +1,11 @@
+<launch>
+
+    <!-- launch metric mapping -->
+    <include file="$(find semantic_map)/launch/mapping.launch">
+    </include>
+
+    <!-- Table detection -->
+    <include file="$(find table_detection)/launch/detection.launch">
+    </include>
+
+</launch>

@@ -9,6 +9,16 @@
     uri: https://github.com/strands-project/strands_utils.git
     version: hydro-devel
 
+- git:
+    local-name: strands_apps
+    uri: https://github.com/strands-project/strands_apps.git
+    version: hydro-devel
+
+- git:
+    local-name: strands_social
+    uri: https://github.com/strands-project/strands_social.git
+    version: hydro-devel
+
 # Interfaces
 - git:
     local-name: strands_webtools
@@ -16,9 +26,9 @@
     version: hydro-devel
 
 - git: 
-   local-name: ros_twitter_bootstrap
-   uri: 'https://github.com/strands-project/ros_twitter_bootstrap.git'
-   version: hydro-devel
+   local-name: twitter_bootstrap
+   uri: 'https://github.com/strands-project/twitter_bootstrap.git'
+   version: master
 
 - git:
     local-name: strands_hri
@@ -43,6 +53,11 @@
 - git: 
    local-name: strands_ui
    uri: 'https://github.com/strands-project/strands_ui.git'
+   version: hydro-devel
+
+- git: 
+   local-name: robblog
+   uri: 'https://github.com/strands-project/robblog.git'
    version: hydro-devel
 
 - git: 

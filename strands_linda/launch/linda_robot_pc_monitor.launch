@@ -1,31 +1,29 @@
 <launch>
     <arg name="machine" default="localhost" />
-    <arg name="user" default="hydro-default" />
-    <arg name="with_mux" default="false" />
+    <arg name="user" default="strands" />
+    <arg name="laser" default="/dev/laser" />
+    <arg name="scitos_config" default="$(find scitos_mira)/resources/SCITOSDriver-with-udev.xml"/>
+    <arg name="with_mux" default="true" />
     <arg name="chest_camera" default="true" />
-    <arg name="chest_ip" default="scitosstrands" />
-    <arg name="chest_user" default="hydro-default" />
-    <arg name="head_camera" default="false" />
-    <arg name="head_user" default="hydro-default" />
-    <arg name="head_ip" default="strands-sidekick" />
+    <arg name="chest_ip" default="right-cortex" />
+    <arg name="head_camera" default="true" />
+    <arg name="head_ip" default="left-cortex" />
 
     <machine name="$(arg machine)" address="$(arg machine)" env-loader="/opt/strands/strands_catkin_ws/devel/env.sh" user="$(arg user)" default="true"/>
-
 
     <!-- STRANDS Robot -->
     <include file="$(find scitos_bringup)/launch/strands_robot.launch" >
         <arg name="machine"  value="$(arg machine)"/>
         <arg name="user"  value="$(arg user)"/>
+        <arg name="laser" value="$(arg laser)"/>
+        <arg name="scitos_config" value="$(arg scitos_config)"/>
         <arg name="with_mux" value="$(arg with_mux)" />
         <arg name="chest_camera" value="$(arg chest_camera)" />
-        <arg name="chest_user" value="$(arg chest_user)" />
         <arg name="chest_ip" value="$(arg chest_ip)" />
         <arg name="head_camera" value="$(arg head_camera)" />
-        <arg name="head_user" value="$(arg head_user)" />
         <arg name="head_ip" value="$(arg head_ip)" />
     </include>
 
     <node name="odometry_mileage" pkg="odometry_mileage" type="odometry_mileage"/>
 
 </launch>
-
