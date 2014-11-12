@@ -8,7 +8,7 @@
 
 	<arg name="chest_camera" default="false" />
 	<arg name="chest_ip" default="localhost" />
-	<arg name="chest_user" default="strands" />
+	<arg name="chest_user" default="" />
 
 	<arg name="with_mux" default="false" />
 	<arg name="js" default="$(optenv JOYSTICK_DEVICE /dev/js1)" />
