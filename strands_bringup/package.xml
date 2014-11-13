@@ -12,6 +12,7 @@
 
     <buildtool_depend>catkin</buildtool_depend>
 
+    <run_depend>scitos_bringup</run_depend>
     <run_depend>scitos_mira</run_depend>
     <run_depend>scitos_drivers</run_depend>
     <run_depend>flir_pantilt_d46</run_depend>
