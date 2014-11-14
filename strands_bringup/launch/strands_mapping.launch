@@ -1,0 +1,38 @@
+<launch>
+	<!-- declare arg to be passed in -->
+    <arg name="machine" default="localhost"/>
+    <arg name="user" default="" />
+
+	<arg name="map" default="/opt/strands/maps/last_map.yaml"/>
+ 	<arg name="tmap" default="last_map"/>
+    <arg name="with_mux" default="false" />
+
+  <!-- NOW when launching in a remote mode it will need the ROS_ENV_LOADER set if not it will leave it empty -->
+  <machine name="$(arg machine)" address="$(arg machine)" env-loader="$(optenv ROS_ENV_LOADER )" user="$(arg user)" default="true" />
+
+
+	<!--- Docking  -->
+  <include unless="$(arg with_mux)" file="$(find scitos_docking)/launch/charging.launch">
+    <arg name="machine"  value="$(arg machine)"/>
+    <arg name="user"  value="$(arg user)"/>
+  </include>
+  <include if="$(arg with_mux)" file="$(find scitos_docking)/launch/charging_mux.launch">
+    <arg name="machine"  value="$(arg machine)"/>
+    <arg name="user"  value="$(arg user)"/>
+  </include>
+
+
+    <include file="$(find joy_map_saver)/launch/joy_map_saver.launch" >
+        <arg name="machine"  value="$(arg machine)"/>
+        <arg name="user"  value="$(arg user)"/>
+		<arg name="map"  value="$(arg map)"/>
+    </include>
+
+
+    <include file="$(find topological_utils)/launch/empty_topological_map.launch" >
+        <arg name="machine"  value="$(arg machine)"/>
+        <arg name="user"  value="$(arg user)"/>
+		<arg name="map"  value="$(arg tmap)"/>
+    </include>
+
+</launch>

@@ -14,3 +14,8 @@ catkin_package(
 install(DIRECTORY launch
    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
+
+ install(PROGRAMS
+   scripts/start.sh
+   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+ )
