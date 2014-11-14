@@ -1,14 +1,6 @@
 <launch>
-	<arg name="machine" default="$(optenv HOSTNAME localhost)" />
+	<arg name="machine" default="localhost" />
 	<arg name="user" default="" />
-
-	<arg name="head_camera" default="false" />
-	<arg name="head_ip" default="localhost" />
-	<arg name="head_user" default="" />
-
-	<arg name="chest_camera" default="false" />
-	<arg name="chest_ip" default="localhost" />
-	<arg name="chest_user" default="" />
 
 	<arg name="with_mux" default="false" />
 	<arg name="js" default="$(optenv JOYSTICK_DEVICE /dev/js1)" />
@@ -53,22 +45,6 @@
 	</include>
 
 
-	<!-- Head Xtion Camera -->
-	<include if="$(arg head_camera)" file="$(find openni_wrapper)/launch/main.launch">
-	    <arg name="camera" value="head_xtion" />
-    	<arg name="machine" value="$(arg head_ip)"/>
-		<arg name="user" value="$(arg head_user)" />
-	</include>
-
-
-	<!-- Chest Xtion Camera -->
-	<include if="$(arg chest_camera)" file="$(find openni_wrapper)/launch/main.launch">
-	    <arg name="camera" value="chest_xtion" />
-    	<arg name="machine" value="$(arg chest_ip)"/>
-		<arg name="user" value="$(arg chest_user)" />
-	</include> 
-
-
 	<!--- Robot state publisher -->
 	<include file="$(find scitos_description)/launch/scitos_state_publisher.launch">
 	    <arg name="machine"  value="$(arg machine)"/>
@@ -94,8 +70,5 @@
 	    <arg name="machine"  value="$(arg machine)"/>
 	    <arg name="user"  value="$(arg user)"/>
 	</include>
-        
-
-        
 
 </launch>
