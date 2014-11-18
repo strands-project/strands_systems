@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <launch>
   <arg name="with_camera" default="false"/>
   <arg name="camera" default="chest_xtion"/>
@@ -14,10 +15,8 @@
   <arg name="machine" default="localhost" />
   <arg name="user" default="" />
 
-
   <!-- NOW when launching in a remote mode it will need the ROS_ENV_LOADER set if not it will leave it empty -->
   <machine name="$(arg machine)" address="$(arg machine)" env-loader="$(optenv ROS_ENV_LOADER )" user="$(arg user)" default="true" />
-
 
   <!-- strands_movebase -->
   <include file="$(find strands_movebase)/launch/movebase.launch">
@@ -35,7 +34,6 @@
     <arg name="no_go_map" value="$(arg no_go_map)"/>
   </include>
 
-
   <!--- Docking -->
   <include unless="$(arg with_mux)" file="$(find scitos_docking)/launch/charging.launch">
     <arg name="machine"  value="$(arg machine)"/>
@@ -45,39 +43,25 @@
   <include if="$(arg with_mux)" file="$(find scitos_docking)/launch/charging_mux.launch">
     <arg name="machine"  value="$(arg machine)"/>
     <arg name="user"  value="$(arg user)"/>
-
   </include>
 
+  <!-- Ramp Climbing -->
+  <include file="$(find ramp_climb)/launch/rampclimbing_mux.launch">
+      <arg name="machine"  value="$(arg machine)"/>
+      <arg name="user"  value="$(arg user)"/>
+  </include>
 
-  <!--- Door Passing 
-  <include file="$(find door_pass)/launch/doorpassing_mux.launch">
+  <!-- Backtrack server -->
+  <include file="$(find backtrack_behaviour)/launch/backtrack.launch"/> 
+
+  <!--- Topological Navigation (includes monitored_navigation) -->
+  <include file="$(find topological_navigation)/launch/topological_navigation.launch">
     <arg name="machine"  value="$(arg machine)"/>
     <arg name="user"  value="$(arg user)"/>
-  </include>
--->
+    <arg name="map" value="$(arg topological_map)"/>
+    <arg name="mon_nav_config_file" value="$(arg mon_nav_config_file)"/>
+ </include>
 
-
-  <!--- Ramp Climbing -->
-  <include file="$(find ramp_climb)/launch/rampclimbing_mux.launch">
-	    <arg name="machine"  value="$(arg machine)"/>
-	    <arg name="user"  value="$(arg user)"/>
-  </include>
-
-   <!--- Backtrack server -->
-   <include file="$(find backtrack_behaviour)/launch/backtrack.launch"/> 
-
-
-	<!--- Topological Navigation (includes monitored_navigation) -->
-	<include file="$(find topological_navigation)/launch/topological_navigation.launch">
-		<arg name="machine"  value="$(arg machine)"/>
-		<arg name="user"  value="$(arg user)"/>
-		<arg name="map" value="$(arg topological_map)"/>
-                <arg name="mon_nav_config_file" value="$(arg mon_nav_config_file)"/>
-	</include>
-
-   <node name="odometry_mileage" pkg="odometry_mileage" type="odometry_mileage"/>
-
-   <node name="door_pass_node" pkg="door_pass" type="door_pass.py" output="screen" />
-
-
+  <node name="odometry_mileage" pkg="odometry_mileage" type="odometry_mileage"/>
+  <node name="door_pass_node" pkg="door_pass" type="door_pass.py" output="screen" />
 </launch>
