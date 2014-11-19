@@ -2,8 +2,8 @@
 Changelog for package strands_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.4 (2014-11-19)
+------------------
 * Ability to include site-specific movebase parameters.
 * Contributors: Lucas Beyer
 
