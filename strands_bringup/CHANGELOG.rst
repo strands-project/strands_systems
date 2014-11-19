@@ -2,8 +2,8 @@
 Changelog for package strands_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.3 (2014-11-19)
+------------------
 * Fixing argument rename
   This is wrong because both @nilsbore and me made PRs in parallel, so he didn't see my changes and I didn't see his.
 * Update README.md
