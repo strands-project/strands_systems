@@ -2,8 +2,8 @@
 Changelog for package strands_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.5 (2014-11-20)
+------------------
 * Pass-through the EBC port for docking.
   DEFAULT TO NONE, ONLY ONE ROBOT HAS A LIGHT IN THERE.
   Feels good to shout once in the morning.
