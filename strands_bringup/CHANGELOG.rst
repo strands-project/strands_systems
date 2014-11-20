@@ -2,6 +2,13 @@
 Changelog for package strands_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Pass-through the EBC port for docking.
+  DEFAULT TO NONE, ONLY ONE ROBOT HAS A LIGHT IN THERE.
+  Feels good to shout once in the morning.
+* Contributors: Lucas Beyer
+
 0.0.4 (2014-11-19)
 ------------------
 * Ability to include site-specific movebase parameters.
