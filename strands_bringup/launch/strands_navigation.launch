@@ -18,6 +18,9 @@
   <arg name="with_site_movebase_params" default="false"/>
   <arg name="site_movebase_params" default=""/>
 
+  <!-- WARNING: This EBC will be powerded on and off during docking! -->
+  <arg name="lightEBC" default=""/>
+
   <arg name="machine" default="localhost" />
   <arg name="user" default="" />
 
@@ -51,11 +54,12 @@
   <include unless="$(arg with_mux)" file="$(find scitos_docking)/launch/charging.launch">
     <arg name="machine"  value="$(arg machine)"/>
     <arg name="user"  value="$(arg user)"/>
-
+    <arg name="lightEBC"  value="$(arg lightEBC)"/>
   </include>
   <include if="$(arg with_mux)" file="$(find scitos_docking)/launch/charging_mux.launch">
     <arg name="machine"  value="$(arg machine)"/>
     <arg name="user"  value="$(arg user)"/>
+    <arg name="lightEBC"  value="$(arg lightEBC)"/>
   </include>
 
   <!-- Ramp Climbing -->
