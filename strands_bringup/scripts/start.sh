@@ -34,7 +34,7 @@ tmux select-window -t $SESSION:4
 tmux send-keys "roslaunch strands_bringup strands_ui.launch machine:=localhost user:=$USER"
 
 tmux select-window -t $SESSION:5
-tmux send-keys "roslaunch strands_bringup strands_navigation.launch machine:=localhost user:=$USER with_camera:=True camera:=chest_xtion camera_ip:=localhost camera_user:=$USER map:=/path/to/map.yaml with_no_go_map:=False no_go_map:=/path/to/no_go_map.yaml with_mux:=False topological_map:=name_of_topological_map mon_nav_config_file:=$(rospack find strands_recovery_behaviours)/config/monitored_nav_config.yaml"
+tmux send-keys "roslaunch strands_bringup strands_navigation.launch machine:=localhost user:=$USER with_camera:=True camera:=chest_xtion camera_ip:=localhost camera_user:=$USER map:=/path/to/map.yaml with_no_go_map:=False no_go_map:=/path/to/no_go_map.yaml with_mux:=False topological_map:=name_of_topological_map"
 
 tmux select-window -t $SESSION:9
 tmux send-keys "rosrun rviz rviz"
