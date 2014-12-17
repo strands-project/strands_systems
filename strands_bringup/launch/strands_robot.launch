@@ -35,8 +35,7 @@
 
 
 	<!-- PC Monitor -->
-	<!-- Not released -->
-	<!-- node name="pc_monitor" pkg="scitos_pc_monitor" type="pc_monitor.py" / -->
+	<node name="pc_monitor" pkg="scitos_pc_monitor" type="pc_monitor" />
 
 	<!-- Diagnostics aggregator -->
 	<include file="$(find scitos_bringup)/launch/diagnostic_agg.launch" >
