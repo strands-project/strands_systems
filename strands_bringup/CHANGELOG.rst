@@ -2,6 +2,13 @@
 Changelog for package strands_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Include pc_monitor in robot bringup.
+  Includes the now released pc_monitor in the strands_robot launch file.
+* removing config for monitored nav (its already a default and it looks like it doesnt work)
+* Contributors: Bruno Lacerda, Chris Burbridge
+
 0.0.6 (2014-11-21)
 ------------------
 * Make the subsampling parameters configurable.
