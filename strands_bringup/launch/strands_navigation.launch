@@ -14,7 +14,7 @@
   <arg name="z_stair_threshold" default="0.12"/>
   <arg name="z_obstacle_threshold" default="0.15"/>
   <arg name="with_head_xtion" default="false"/>
-  <arg name="with_human_aware" default="false"/>
+  <arg name="with_human_aware" default="true"/>
 
   <arg name="with_site_movebase_params" default="false"/>
   <arg name="site_movebase_params" default=""/>
