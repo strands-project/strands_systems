@@ -2,8 +2,8 @@
 Changelog for package strands_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.9 (2015-03-24)
+------------------
 * Setting default of with_human_aware to true
   Now that https://github.com/strands-project/strands_hri/pull/91 is merged, human aware navigation dynamically subscribes and unsubscribes from the ppl perception pipeline. this means:
   * If the edge uses human aware navigation, everything works as expected. While the robot is driving it subscribes to the ppl perception. If not goal is active it unsubscribes.
