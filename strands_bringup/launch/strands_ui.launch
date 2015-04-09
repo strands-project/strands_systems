@@ -1,12 +1,16 @@
 <launch>
     <arg name="machine" default="localhost" />
     <arg name="user" default="" />
+    <arg name="mary_machine" default="localhost" />
+    <arg name="mary_machine_user" default="" />
 
     <machine name="$(arg machine)" address="$(arg machine)" env-loader="$(optenv ROS_ENV_LOADER )" user="$(arg user)" default="true"/>
 
     <include file="$(find strands_ui)/launch/strands_ui.launch" >
         <arg name="machine"  value="$(arg machine)"/>
         <arg name="user"  value="$(arg user)"/>
+        <arg name="mary_machine"  value="$(arg mary_machine)"/>
+        <arg name="mary_machine_user"  value="$(arg mary_machine_user)"/>
     </include>
 
 </launch>
