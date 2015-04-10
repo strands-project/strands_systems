@@ -2,6 +2,11 @@
 Changelog for package strands_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Adding parmaters to start mary on different machine.
+* Contributors: Christian Dondrup
+
 0.0.9 (2015-03-24)
 ------------------
 * Setting default of with_human_aware to true
