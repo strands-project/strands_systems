@@ -2,6 +2,13 @@
 Changelog for package strands_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* using door pass launch
+* changing door passing node file name
+* Add parameter to disable megnetic barrier.
+* Contributors: Bruno Lacerda, Chris Burbridge
+
 0.0.10 (2015-04-10)
 -------------------
 * Adding parmaters to start mary on different machine.
