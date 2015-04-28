@@ -2,8 +2,8 @@
 Changelog for package strands_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.11 (2015-04-28)
+-------------------
 * using door pass launch
 * changing door passing node file name
 * Add parameter to disable megnetic barrier.
