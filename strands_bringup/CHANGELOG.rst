@@ -2,6 +2,34 @@
 Changelog for package strands_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.0.12 (2015-04-28)
+-------------------
+
+0.0.11 (2015-04-28)
+-------------------
+* using door pass launch
+* changing door passing node file name
+* Add parameter to disable megnetic barrier.
+* Contributors: Bruno Lacerda, Chris Burbridge
+
+0.0.10 (2015-04-10)
+-------------------
+* Adding parmaters to start mary on different machine.
+* Contributors: Christian Dondrup
+
+0.0.9 (2015-03-24)
+------------------
+* Setting default of with_human_aware to true
+  Now that https://github.com/strands-project/strands_hri/pull/91 is merged, human aware navigation dynamically subscribes and unsubscribes from the ppl perception pipeline. this means:
+  * If the edge uses human aware navigation, everything works as expected. While the robot is driving it subscribes to the ppl perception. If not goal is active it unsubscribes.
+  * If the edge uses move_base, human ware navigation is unsubscribed from the ppl perception, not causing any processing.
+  * If the ppl perception is not running, human aware navigation behaves like move_base + some gazing behaviour
+  Therefore, having it running by default does not cause additional load on the CPU if it is not used but it prevents confusion if it is used in the edge but not running.
+* Adding strands_hri to package xml of strands_bringup.
+* Added human_aware_navigation and dependencies to strands_navigation.launch. See `#101 <https://github.com/strands-project/strands_systems/issues/101>`_. Default behaviour is unchanged. To run with human_aware_navigation, start with .
+* indigo-0.0.8
+* Contributors: Chris Burbridge, Christian Dondrup
+
 0.0.7 (2015-01-09)
 ------------------
 * Include pc_monitor in robot bringup.
