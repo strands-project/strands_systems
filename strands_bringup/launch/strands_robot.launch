@@ -36,7 +36,7 @@
 
 
 	<!-- PC Monitor -->
-	<node name="pc_monitor" pkg="scitos_pc_monitor" type="pc_monitor" />
+	<node name="pc_monitor" pkg="scitos_pc_monitor" type="pc_monitor" respawn="true"/>
 
 	<!-- Diagnostics aggregator -->
 	<include file="$(find scitos_bringup)/launch/diagnostic_agg.launch" >
