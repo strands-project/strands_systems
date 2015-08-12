@@ -22,7 +22,7 @@
 	  <arg name="user" value="$(arg head_user)" />
 
 	  <arg name="camera" value="head_xtion"  />
-	  <arg name="depth_registration" value="false" />
+	  <arg name="depth_registration" value="true" />
 	  <arg name="publish_tf" value="false" />
 	  <arg name="debayer_processing" value="true" />
 	</include>
