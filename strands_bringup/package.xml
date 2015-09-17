@@ -25,6 +25,7 @@
     <run_depend>strands_navigation</run_depend>
     <run_depend>strands_ui</run_depend>
     <run_depend>strands_hri</run_depend>
+    <run_depend>openni2_launch</run_depend>
 
     <export>
 
