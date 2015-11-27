@@ -7,7 +7,7 @@
 
   <arg name="map"/>
   <arg name="with_no_go_map" default="false"/>
-  <arg name="no_go_map"/>
+  <arg name="no_go_map" default=""/>
   <arg name="with_mux" default="false" />
   <arg name="topological_map"/>
   <arg name="mon_nav_config_file" default="$(find strands_recovery_behaviours)/config/monitored_nav_config.yaml"/>
