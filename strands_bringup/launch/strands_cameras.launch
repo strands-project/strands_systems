@@ -10,23 +10,31 @@
 	<arg name="chest_ip" default="localhost" />
 	<arg name="chest_user" default="" />
 
-    <!-- NOW when launching in a remote mode it will need the ROS_ENV_LOADER set if not it will leave it empty -->
-    <machine name="$(arg machine)" address="$(arg machine)" env-loader="$(optenv ROS_ENV_LOADER )" user="$(arg user)" default="true" />
+    	<!-- NOW when launching in a remote mode it will need the ROS_ENV_LOADER set if 
+	     not it will leave it empty -->
+        <machine name="$(arg machine)" address="$(arg machine)" 
+	               env-loader="$(optenv ROS_ENV_LOADER )" user="$(arg user)" default="true" />
 
 
 	<!-- Head Xtion Camera -->
-	<include if="$(arg head_camera)" file="$(find openni_wrapper)/launch/main.launch">
-	    <arg name="camera" value="head_xtion" />
-    	<arg name="machine" value="$(arg head_ip)"/>
-		<arg name="user" value="$(arg head_user)" />
+	<include if="$(arg head_camera)" file="$(find strands_bringup)/launch/openni2.launch">
+    	  <arg name="machine" value="$(arg head_ip)"/>
+	  <arg name="user" value="$(arg head_user)" />
+
+	  <arg name="camera" value="head_xtion"  />
+	  <arg name="depth_registration" value="true" />
+	  <arg name="publish_tf" value="false" />
+	  <arg name="debayer_processing" value="true" />
 	</include>
 
 
-	<!-- Chest Xtion Camera -->
-	<include if="$(arg chest_camera)" file="$(find openni_wrapper)/launch/main.launch">
-	    <arg name="camera" value="chest_xtion" />
-    	<arg name="machine" value="$(arg chest_ip)"/>
-		<arg name="user" value="$(arg chest_user)" />
-	</include> 
+	<include if="$(arg chest_camera)" file="$(find strands_bringup)/launch/openni2.launch">
+    	  <arg name="machine" value="$(arg chest_ip)"/>
+	  <arg name="user" value="$(arg chest_user)" />
 
+	  <arg name="camera" value="chest_xtion"  />
+	  <arg name="depth_registration" value="false" />
+	  <arg name="publish_tf" value="false" />
+	  <arg name="debayer_processing" value="false" />
+	</include>
 </launch>
