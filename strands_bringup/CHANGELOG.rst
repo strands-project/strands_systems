@@ -2,6 +2,19 @@
 Changelog for package strands_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* add default to no_go_map
+* Expose the PTU device as argument so it can be set on commandline.
+* Add openni2_launch dependency.
+* Enable depth registration on head_xtion.
+* Switch to openni2_launch for cameras.
+* Adding position injection parameter
+* Adding respawn flag to strands_robot.launch
+* Merge branch 'indigo-devel' of http://github.com/strands-project/strands_systems into indigo-devel
+* Adding human_aware_navigation launch file to strands_navigation.launch
+* Contributors: Bruno Lacerda, Chris Burbridge, Christian Dondrup, lucasb-eyer
+
 0.0.12 (2015-04-28)
 -------------------
 
