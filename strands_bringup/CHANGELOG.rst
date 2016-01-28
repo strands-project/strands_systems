@@ -2,8 +2,8 @@
 Changelog for package strands_bringup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.0 (2016-01-28)
+------------------
 * add default to no_go_map
 * Expose the PTU device as argument so it can be set on commandline.
 * Add openni2_launch dependency.
