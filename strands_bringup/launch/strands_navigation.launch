@@ -16,6 +16,7 @@
   <arg name="z_obstacle_threshold" default="0.15"/>
   <arg name="with_head_xtion" default="false"/>
   <arg name="with_human_aware" default="true"/>
+  <arg name="people_positions" default="/people_tracker_filter/positions"/>
 
   <arg name="with_site_movebase_params" default="false"/>
   <arg name="site_movebase_params" default=""/>
@@ -104,6 +105,7 @@
     <include file="$(find strands_human_aware_navigation)/launch/human_aware_navigation.launch">
       <arg name="machine"  value="$(arg machine)"/>
       <arg name="user"  value="$(arg user)"/>
+      <arg name="people_positions"  value="$(arg people_positions)"/>
     </include>
   </group>
 </launch>
